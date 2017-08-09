@@ -1,0 +1,22 @@
+{
+  "compatibleVersion": 1,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "Menu1",
+      "identifier": "main",
+      "script": "./main.js"
+    },
+    {
+      "name": "Menu2",
+      "identifier": "main2",
+      "script": "./main2.js"
+    }
+  ],
+  "menu": {
+    "items": [
+      "main",
+      "main2"
+    ]
+  }
+}
