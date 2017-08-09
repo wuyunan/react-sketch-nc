@@ -34,8 +34,7 @@ const SettingVew = props => (
 
 export default (context) => {
     let xml = <SettingVew/>;
-    render(xml, context.document.addBlankPage());
-    render(xml, context.document.addBlankPage());
+    render(xml, context.document.currentPage());
 
 }
 

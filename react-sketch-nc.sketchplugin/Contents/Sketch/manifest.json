@@ -1,0 +1,27 @@
+{
+  "compatibleVersion": 1,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "Menu1",
+      "identifier": "main",
+      "script": "main.js"
+    },
+    {
+      "name": "Menu2",
+      "identifier": "main2",
+      "script": "main2.js"
+    }
+  ],
+  "menu": {
+    "items": [
+      "main",
+      "main2"
+    ]
+  },
+  "name": "react-sketch-nc",
+  "disableCocoaScriptPreprocessor": true,
+  "appcast": "https://raw.githubusercontent.com//master/.appcast.xml",
+  "author": "wuyunan",
+  "email": "wuyunan888@126.com"
+}

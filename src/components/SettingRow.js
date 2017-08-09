@@ -13,9 +13,13 @@ import {
 
 
 const SettingRow = props =>
-    <View style={styles.row}>
-        <Image source={props.icon} style={styles.avatar}/>
-        <Text>{props.subtitle}</Text>
+    <View name='Settingrow'
+          style={styles.row}>
+        <Image name='icon'
+               source={props.icon}
+               style={styles.avatar}/>
+        <Text name='title'
+              style={styles.text}>{props.subtitle}</Text>
     </View>
 
 
@@ -24,12 +28,26 @@ const styles = StyleSheet.create({
         backgroundColor: '#F9FDFF',
         width: 375,
         height: 44,
+        flexDirection: 'row',
+        flex: 1,
+        paddingLeft: 12,
+        paddingRight: 12,
+        borderBottomColor: '#d7d7d7',
+        borderWidth: 0.5
     },
     avatar: {
-        height: 32,
-        width: 32,
+        height: 24,
+        width: 24,
+        marginTop: 12,
         resizeMode: 'contain',
     },
+    text: {
+        marginLeft:12,
+        alignContent:'center',
+        height: 44,
+        fontSize: 16,
+
+    }
 
 });
 export default SettingRow;
