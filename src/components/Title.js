@@ -12,7 +12,7 @@ import {
 } from 'react-sketchapp';
 
 
-const SettingRow = props =>
+const Title = props =>
     <View name='Settingrow'
           style={styles.row}>
         <Image name='icon'
@@ -57,4 +57,4 @@ const styles = StyleSheet.create({
 
     }
 });
-export default SettingRow;
+export default Title;
