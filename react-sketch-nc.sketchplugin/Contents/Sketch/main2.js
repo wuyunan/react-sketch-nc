@@ -16162,7 +16162,9 @@ var _reactSketchapp = __webpack_require__(28);
 
 var _config = __webpack_require__(139);
 
-var _common = __webpack_require__(140);
+var _color = __webpack_require__(140);
+
+var _color2 = _interopRequireDefault(_color);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -16204,7 +16206,7 @@ var StatusBarWhite = function StatusBarWhite(props) {
 
 var styles = _reactSketchapp.StyleSheet.create({
     row: {
-        backgroundColor: _common.Color.colorPrimary,
+        backgroundColor: _color2['default'].colorPrimary,
         width: 375,
         height: 20,
         flexDirection: 'row',
@@ -16268,26 +16270,6 @@ exports['default'] = {
 
 /***/ }),
 /* 140 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _color = __webpack_require__(141);
-
-var _color2 = _interopRequireDefault(_color);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-exports['default'] = {
-
-    Color: _color2['default']
-
-};
-
-/***/ }),
-/* 141 */
 /***/ (function(module, exports) {
 
 Object.defineProperty(exports, "__esModule", {

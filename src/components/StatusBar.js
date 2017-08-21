@@ -13,8 +13,8 @@ import {
 
 
 import {IMAGE_SERVER_URL, IMAGE_SERVER_PORT} from '../config'
+import Color from "../common/color";
 
-import {Color} from '../common'
 
 
 const IMG_ENDPOINT = `${IMAGE_SERVER_URL}:${IMAGE_SERVER_PORT}/`
