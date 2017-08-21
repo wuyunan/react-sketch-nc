@@ -16160,7 +16160,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactSketchapp = __webpack_require__(28);
 
-var _config = __webpack_require__(139);
+var _index = __webpack_require__(139);
+
+var _index2 = _interopRequireDefault(_index);
 
 var _color = __webpack_require__(140);
 
@@ -16172,7 +16174,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
  * components/Row.js
  * Define your component using platform-independent primitives
  */
-var IMG_ENDPOINT = String(_config.IMAGE_SERVER_URL) + ':' + String(_config.IMAGE_SERVER_PORT) + '/';
+var IMG_ENDPOINT = String(_index2['default'].IMAGE_SERVER_URL) + ':' + String(_index2['default'].IMAGE_SERVER_PORT) + '/';
 
 var StatusBarWhite = function StatusBarWhite(props) {
     return _react2['default'].createElement(
@@ -16181,9 +16183,7 @@ var StatusBarWhite = function StatusBarWhite(props) {
             style: styles.row },
         _react2['default'].createElement(
             _reactSketchapp.View,
-            {
-                name: 'sign',
-                style: styles.sign },
+            { name: 'sign', style: styles.sign },
             _react2['default'].createElement(_reactSketchapp.View, { style: styles.dot }),
             _react2['default'].createElement(_reactSketchapp.View, { style: styles.dot }),
             _react2['default'].createElement(_reactSketchapp.View, { style: styles.dot }),
@@ -16192,15 +16192,33 @@ var StatusBarWhite = function StatusBarWhite(props) {
         ),
         _react2['default'].createElement(
             _reactSketchapp.Text,
-            { name: 'brand',
-                style: styles.brand },
-            'NC'
+            { name: 'brand', style: styles.brand },
+            'NCTech'
         ),
         _react2['default'].createElement(_reactSketchapp.Image, {
             name: 'wifi',
             style: styles.wifi,
             source: IMG_ENDPOINT + 'Wi-Fi@2x.png'
-        })
+        }),
+        _react2['default'].createElement(
+            _reactSketchapp.Text,
+            { name: 'time', style: styles.time },
+            '9:58 AM'
+        ),
+        _react2['default'].createElement(
+            _reactSketchapp.View,
+            { name: 'batteryArea', style: styles.batteryArea },
+            _react2['default'].createElement(
+                _reactSketchapp.Text,
+                { name: 'brand', style: styles.brand },
+                '100%'
+            ),
+            _react2['default'].createElement(_reactSketchapp.Image, {
+                name: 'battery',
+                style: styles.battery,
+                source: IMG_ENDPOINT + 'Battery@2x.png'
+            })
+        )
     );
 };
 
@@ -16244,12 +16262,30 @@ var styles = _reactSketchapp.StyleSheet.create({
         fontSize: 12,
         color: '#ffffff'
     },
+    time: {
+        marginLeft: 8,
+        marginTop: 2,
+        fontSize: 12,
+        color: '#ffffff'
+    },
     wifi: {
         marginTop: 5,
         marginLeft: 8,
         resizeMode: 'contain',
         height: 9,
         width: 13
+    },
+    batteryArea: {
+        marginLeft: 8,
+        flexDirection: 'row',
+        alignContent: 'right'
+    },
+    battery: {
+        marginTop: 5,
+        marginLeft: 4,
+        resizeMode: 'contain',
+        height: 10,
+        width: 25
     }
 });
 exports['default'] = StatusBarWhite;
@@ -16262,10 +16298,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports['default'] = {
-
-    IMAGE_SERVER_URL: 'http://10.12.30.28',
+    IMAGE_SERVER_URL: 'http://localhost',
     IMAGE_SERVER_PORT: 8080
-
 };
 
 /***/ }),

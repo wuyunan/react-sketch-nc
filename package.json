@@ -4,6 +4,7 @@
   "main": "react-sketch-nc.sketchplugin",
   "manifest": "src/manifest.json",
   "scripts": {
+    "serve": "serve images -n --port 8080 --silent",
     "build": "skpm build",
     "watch": "skpm build --watch",
     "render": "skpm build --watch --run",
@@ -12,6 +13,11 @@
   },
   "author": "wuyunan <wuyunan888@126.com>",
   "license": "MIT",
+  "standard": {
+    "ignore": [
+      "*.sketchplugin"
+    ]
+  },
   "dependencies": {
     "prop-types": "^15.5.8",
     "react": "^15.6.1",
@@ -22,9 +28,14 @@
     "react-primitives-google-static-map": "^1.0.1",
     "react-primitives-mapquest-static-map": "^1.0.3",
     "react-sketchapp": "^0.11.6",
-    "react-test-renderer": "^15.4.1"
+    "react-test-renderer": "^15.4.1",
+    "sketch-module-fetch-polyfill": "^0.1.4",
+    "traverse": "^0.6.6"
   },
   "devDependencies": {
-    "skpm": "^0.10.2"
+    "skpm": "^0.10.2",
+    "serve": "^5.1.5",
+    "prop-types": "^15.5.10",
+    "serve": "^5.1.5"
   }
 }
