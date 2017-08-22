@@ -5,8 +5,11 @@
 import React from 'react';
 import {render, Artboard, StyleSheet, View} from 'react-sketchapp';
 import SettingRow from './components/SettingRow';
-import StatusBarWhite from "./components/StatusBar";
+import {StatusBarLight, StatusBarDark} from "./components/StatusBar/index";
+import {TitleBarDark, TitleBarLight, TitleBarSearch} from "./components/Navigation/index";
+import Config from "./config/index";
 
+const IMG_ENDPOINT = `${Config.IMAGE_SERVER_URL}:${Config.IMAGE_SERVER_PORT}/`;
 
 const styles = StyleSheet.create({
     artboard: {
@@ -35,14 +38,40 @@ const SettingVew = props => (
     )
 ;
 
-const StatusBar = props => (
+const Demo1 = props => (
+        <Artboard>
+            <StatusBarLight/>
+            <TitleBarLight backIcon={`${IMG_ENDPOINT}previous@2x.png`}
+                           title="标题"
+                           rightText="保存"
+                           leftText="上一个"/>
 
-        <StatusBarWhite />
+        </Artboard>
+    )
+;
+const Demo2 = props => (
+        <Artboard>
+            <StatusBarDark/>
+            <TitleBarDark backIcon={`${IMG_ENDPOINT}back@2x.png`}
+                          title="标题"
+                          rightText="编辑"
+                          leftText="上一个"/>
 
+        </Artboard>
+    )
+;
+const Demo3 = props => (
+        <Artboard>
+            <StatusBarDark/>
+            <TitleBarSearch backIcon={`${IMG_ENDPOINT}back@2x.png`}
+                            searchText="搜索店铺内容"
+            />
+
+        </Artboard>
     )
 ;
 export default (context) => {
-    let xml = <StatusBar/>;
+    let xml = <Demo3/>;
     render(xml, context.document.currentPage());
 
 }

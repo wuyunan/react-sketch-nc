@@ -7050,9 +7050,13 @@ var _SettingRow = __webpack_require__(137);
 
 var _SettingRow2 = _interopRequireDefault(_SettingRow);
 
-var _StatusBar = __webpack_require__(138);
+var _index = __webpack_require__(138);
 
-var _StatusBar2 = _interopRequireDefault(_StatusBar);
+var _index2 = __webpack_require__(147);
+
+var _index3 = __webpack_require__(141);
+
+var _index4 = _interopRequireDefault(_index3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -7060,6 +7064,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
  * sketch-entry.js
  * same setup as other examples
  */
+var IMG_ENDPOINT = String(_index4['default'].IMAGE_SERVER_URL) + ':' + String(_index4['default'].IMAGE_SERVER_PORT) + '/';
+
 var styles = _reactSketchapp.StyleSheet.create({
     artboard: {
         width: 375,
@@ -7086,12 +7092,41 @@ var SettingVew = function SettingVew(props) {
     );
 };
 
-var StatusBar = function StatusBar(props) {
-    return _react2['default'].createElement(_StatusBar2['default'], null);
+var Demo1 = function Demo1(props) {
+    return _react2['default'].createElement(
+        _reactSketchapp.Artboard,
+        null,
+        _react2['default'].createElement(_index.StatusBarLight, null),
+        _react2['default'].createElement(_index2.TitleBarLight, { backIcon: IMG_ENDPOINT + 'previous@2x.png',
+            title: '\u6807\u9898',
+            rightText: '\u4FDD\u5B58',
+            leftText: '\u4E0A\u4E00\u4E2A' })
+    );
+};
+var Demo2 = function Demo2(props) {
+    return _react2['default'].createElement(
+        _reactSketchapp.Artboard,
+        null,
+        _react2['default'].createElement(_index.StatusBarDark, null),
+        _react2['default'].createElement(_index2.TitleBarDark, { backIcon: IMG_ENDPOINT + 'back@2x.png',
+            title: '\u6807\u9898',
+            rightText: '\u7F16\u8F91',
+            leftText: '\u4E0A\u4E00\u4E2A' })
+    );
+};
+var Demo3 = function Demo3(props) {
+    return _react2['default'].createElement(
+        _reactSketchapp.Artboard,
+        null,
+        _react2['default'].createElement(_index.StatusBarDark, null),
+        _react2['default'].createElement(_index2.TitleBarSearch, { backIcon: IMG_ENDPOINT + 'back@2x.png',
+            searchText: '\u641C\u7D22\u5E97\u94FA\u5185\u5BB9'
+        })
+    );
 };
 
 exports['default'] = function (context) {
-    var xml = _react2['default'].createElement(StatusBar, null);
+    var xml = _react2['default'].createElement(Demo3, null);
     (0, _reactSketchapp.render)(xml, context.document.currentPage());
 };
 
@@ -16150,159 +16185,23 @@ exports['default'] = SettingRow;
 /* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
+var _StatusBarLight = __webpack_require__(142);
 
-var _react = __webpack_require__(6);
+var _StatusBarLight2 = _interopRequireDefault(_StatusBarLight);
 
-var _react2 = _interopRequireDefault(_react);
+var _StatusBarDark = __webpack_require__(143);
 
-var _reactSketchapp = __webpack_require__(28);
+var _StatusBarDark2 = _interopRequireDefault(_StatusBarDark);
 
-var _index = __webpack_require__(139);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var _index2 = _interopRequireDefault(_index);
-
-var _color = __webpack_require__(140);
-
-var _color2 = _interopRequireDefault(_color);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-/**
- * components/Row.js
- * Define your component using platform-independent primitives
- */
-var IMG_ENDPOINT = String(_index2['default'].IMAGE_SERVER_URL) + ':' + String(_index2['default'].IMAGE_SERVER_PORT) + '/';
-
-var StatusBarWhite = function StatusBarWhite(props) {
-    return _react2['default'].createElement(
-        _reactSketchapp.View,
-        { name: 'StatusBarWhite',
-            style: styles.row },
-        _react2['default'].createElement(
-            _reactSketchapp.View,
-            { name: 'sign', style: styles.sign },
-            _react2['default'].createElement(_reactSketchapp.View, { style: styles.dot }),
-            _react2['default'].createElement(_reactSketchapp.View, { style: styles.dot }),
-            _react2['default'].createElement(_reactSketchapp.View, { style: styles.dot }),
-            _react2['default'].createElement(_reactSketchapp.View, { style: styles.dot_empty }),
-            _react2['default'].createElement(_reactSketchapp.View, { style: styles.dot_empty })
-        ),
-        _react2['default'].createElement(
-            _reactSketchapp.Text,
-            { name: 'brand', style: styles.brand },
-            'NCTech'
-        ),
-        _react2['default'].createElement(_reactSketchapp.Image, {
-            name: 'wifi',
-            style: styles.wifi,
-            source: IMG_ENDPOINT + 'Wi-Fi@2x.png'
-        }),
-        _react2['default'].createElement(
-            _reactSketchapp.Text,
-            { name: 'time', style: styles.time },
-            '9:58 AM'
-        ),
-        _react2['default'].createElement(
-            _reactSketchapp.View,
-            { name: 'batteryArea', style: styles.batteryArea },
-            _react2['default'].createElement(
-                _reactSketchapp.Text,
-                { name: 'brand', style: styles.brand },
-                '100%'
-            ),
-            _react2['default'].createElement(_reactSketchapp.Image, {
-                name: 'battery',
-                style: styles.battery,
-                source: IMG_ENDPOINT + 'Battery@2x.png'
-            })
-        )
-    );
-};
-
-var styles = _reactSketchapp.StyleSheet.create({
-    row: {
-        backgroundColor: _color2['default'].colorPrimary,
-        width: 375,
-        height: 20,
-        flexDirection: 'row',
-        alignContent: 'center',
-        flex: 1,
-        paddingLeft: 6.5,
-        paddingRight: 12
-    },
-    sign: {
-        flexDirection: 'row',
-        marginTop: 7,
-        height: 6
-    },
-    dot: {
-        marginLeft: 3,
-        alignContent: 'center',
-        height: 5.5,
-        width: 5.5,
-        backgroundColor: '#ffffff',
-        borderRadius: 4
-    },
-    dot_empty: {
-        marginLeft: 2,
-        alignContent: 'center',
-        height: 5.5,
-        width: 5.5,
-        backgroundColor: '#1b82d2',
-        borderColor: '#ffffff',
-        borderWidth: 0.5,
-        borderRadius: 4
-    },
-    brand: {
-        marginLeft: 8,
-        marginTop: 2,
-        fontSize: 12,
-        color: '#ffffff'
-    },
-    time: {
-        marginLeft: 8,
-        marginTop: 2,
-        fontSize: 12,
-        color: '#ffffff'
-    },
-    wifi: {
-        marginTop: 5,
-        marginLeft: 8,
-        resizeMode: 'contain',
-        height: 9,
-        width: 13
-    },
-    batteryArea: {
-        marginLeft: 8,
-        flexDirection: 'row',
-        alignContent: 'right'
-    },
-    battery: {
-        marginTop: 5,
-        marginLeft: 4,
-        resizeMode: 'contain',
-        height: 10,
-        width: 25
-    }
-});
-exports['default'] = StatusBarWhite;
-
-/***/ }),
-/* 139 */
-/***/ (function(module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports['default'] = {
-    IMAGE_SERVER_URL: 'http://localhost',
-    IMAGE_SERVER_PORT: 8080
+module.exports = {
+    StatusBarDark: _StatusBarDark2["default"],
+    StatusBarLight: _StatusBarLight2["default"]
 };
 
 /***/ }),
+/* 139 */,
 /* 140 */
 /***/ (function(module, exports) {
 
@@ -16336,12 +16235,751 @@ exports['default'] = {
     transparent: 'transparent',
     white: "#FFFFFF",
     black: "#000000",
+    text_black: "#030303",
     tab_black_bg: "#27323A",
     tab_white_bg: "#F8F8F8",
     toast_bg: 'rgba(10,10,10, 1)',
     text_import9_disabled: 'rgba(153,153,153, 0.3)',
     text_secondary_disabled: 'rgba(51,51,51, 0.3)'
 };
+
+/***/ }),
+/* 141 */
+/***/ (function(module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports['default'] = {
+    IMAGE_SERVER_URL: 'http://localhost',
+    IMAGE_SERVER_PORT: 8080
+};
+
+/***/ }),
+/* 142 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactSketchapp = __webpack_require__(28);
+
+var _index = __webpack_require__(141);
+
+var _index2 = _interopRequireDefault(_index);
+
+var _color = __webpack_require__(140);
+
+var _color2 = _interopRequireDefault(_color);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+/**
+ * components/Row.js
+ * Define your component using platform-independent primitives
+ */
+var IMG_ENDPOINT = String(_index2['default'].IMAGE_SERVER_URL) + ':' + String(_index2['default'].IMAGE_SERVER_PORT) + '/';
+
+var StatusBarLight = function StatusBarLight(props) {
+    return _react2['default'].createElement(
+        _reactSketchapp.View,
+        { name: 'StatusBarWhite',
+            style: styles.row },
+        _react2['default'].createElement(
+            _reactSketchapp.View,
+            { name: 'left', style: styles.left },
+            _react2['default'].createElement(
+                _reactSketchapp.View,
+                { name: 'sign', style: styles.sign },
+                _react2['default'].createElement(_reactSketchapp.View, { style: styles.dot }),
+                _react2['default'].createElement(_reactSketchapp.View, { style: styles.dot }),
+                _react2['default'].createElement(_reactSketchapp.View, { style: styles.dot }),
+                _react2['default'].createElement(_reactSketchapp.View, { style: styles.dot_empty }),
+                _react2['default'].createElement(_reactSketchapp.View, { style: styles.dot_empty })
+            ),
+            _react2['default'].createElement(
+                _reactSketchapp.Text,
+                { name: 'brand', style: styles.brand },
+                'NCTech'
+            ),
+            _react2['default'].createElement(_reactSketchapp.Image, {
+                name: 'wifi',
+                style: styles.wifi,
+                source: IMG_ENDPOINT + 'Wifi-Black.png'
+            })
+        ),
+        _react2['default'].createElement(
+            _reactSketchapp.Text,
+            { name: 'time', style: styles.time },
+            '9:58 AM'
+        ),
+        _react2['default'].createElement(
+            _reactSketchapp.View,
+            { name: 'batteryArea', style: styles.batteryArea },
+            _react2['default'].createElement(_reactSketchapp.Image, {
+                name: 'battery',
+                style: styles.battery,
+                source: IMG_ENDPOINT + 'Battery_Black@2x.png'
+            }),
+            _react2['default'].createElement(
+                _reactSketchapp.Text,
+                { name: 'brand', style: styles.brand },
+                '77%'
+            )
+        )
+    );
+};
+
+var styles = _reactSketchapp.StyleSheet.create({
+    row: {
+        backgroundColor: _color2['default'].white,
+        width: 375,
+        height: 20,
+        flexDirection: 'row',
+        alignContent: 'center',
+        flex: 1,
+        paddingLeft: 6.5,
+        paddingRight: 12
+    },
+    left: {
+        flex: 1,
+        flexDirection: 'row'
+    },
+    sign: {
+        flexDirection: 'row',
+        marginTop: 7,
+        height: 6
+    },
+    dot: {
+        marginLeft: 3,
+        alignContent: 'center',
+        height: 5.5,
+        width: 5.5,
+        backgroundColor: _color2['default'].text_black,
+        borderRadius: 4
+    },
+    dot_empty: {
+        marginLeft: 2,
+        alignContent: 'center',
+        height: 5.5,
+        width: 5.5,
+        backgroundColor: _color2['default'].white,
+        borderColor: _color2['default'].text_black,
+        borderWidth: 0.5,
+        borderRadius: 4
+    },
+    brand: {
+        marginLeft: 8,
+        marginTop: 2,
+        fontSize: 12,
+        color: _color2['default'].text_black
+    },
+    time: {
+        flex: 1,
+        marginLeft: 8,
+        marginTop: 2,
+        fontSize: 12,
+        color: _color2['default'].text_black,
+        alignItems: 'center',
+        alignSelf: 'center'
+    },
+    wifi: {
+        marginTop: 5,
+        marginLeft: 8,
+        resizeMode: 'contain',
+        height: 9,
+        width: 13
+    },
+    batteryArea: {
+        flex: 1,
+        marginLeft: 8,
+        flexDirection: 'row-reverse',
+        alignContent: 'flex-end'
+    },
+    battery: {
+        marginTop: 5,
+        marginLeft: 4,
+        resizeMode: 'contain',
+        height: 10,
+        width: 25
+    }
+});
+exports['default'] = StatusBarLight;
+
+/***/ }),
+/* 143 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactSketchapp = __webpack_require__(28);
+
+var _index = __webpack_require__(141);
+
+var _index2 = _interopRequireDefault(_index);
+
+var _color = __webpack_require__(140);
+
+var _color2 = _interopRequireDefault(_color);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+/**
+ * components/Row.js
+ * Define your component using platform-independent primitives
+ */
+var IMG_ENDPOINT = String(_index2['default'].IMAGE_SERVER_URL) + ':' + String(_index2['default'].IMAGE_SERVER_PORT) + '/';
+
+var StatusBarDark = function StatusBarDark(props) {
+    return _react2['default'].createElement(
+        _reactSketchapp.View,
+        { name: 'StatusBarWhite',
+            style: styles.row },
+        _react2['default'].createElement(
+            _reactSketchapp.View,
+            { name: 'left', style: styles.left },
+            _react2['default'].createElement(
+                _reactSketchapp.View,
+                { name: 'sign', style: styles.sign },
+                _react2['default'].createElement(_reactSketchapp.View, { style: styles.dot }),
+                _react2['default'].createElement(_reactSketchapp.View, { style: styles.dot }),
+                _react2['default'].createElement(_reactSketchapp.View, { style: styles.dot }),
+                _react2['default'].createElement(_reactSketchapp.View, { style: styles.dot_empty }),
+                _react2['default'].createElement(_reactSketchapp.View, { style: styles.dot_empty })
+            ),
+            _react2['default'].createElement(
+                _reactSketchapp.Text,
+                { name: 'brand', style: styles.brand },
+                'NCTech'
+            ),
+            _react2['default'].createElement(_reactSketchapp.Image, {
+                name: 'wifi',
+                style: styles.wifi,
+                source: IMG_ENDPOINT + 'WiFi@2x.png'
+            })
+        ),
+        _react2['default'].createElement(
+            _reactSketchapp.Text,
+            { name: 'time', style: styles.time },
+            '9:58 AM'
+        ),
+        _react2['default'].createElement(
+            _reactSketchapp.View,
+            { name: 'batteryArea', style: styles.batteryArea },
+            _react2['default'].createElement(_reactSketchapp.Image, {
+                name: 'battery',
+                style: styles.battery,
+                source: IMG_ENDPOINT + 'Battery@2x.png'
+            }),
+            _react2['default'].createElement(
+                _reactSketchapp.Text,
+                { name: 'brand', style: styles.brand },
+                '100%'
+            )
+        )
+    );
+};
+
+var styles = _reactSketchapp.StyleSheet.create({
+    row: {
+        backgroundColor: _color2['default'].colorPrimary,
+        width: 375,
+        height: 20,
+        flexDirection: 'row',
+        alignContent: 'center',
+        flex: 1,
+        paddingLeft: 6.5,
+        paddingRight: 12
+    },
+    left: {
+        flex: 1,
+        flexDirection: 'row'
+    },
+    sign: {
+        flexDirection: 'row',
+        marginTop: 7,
+        height: 6
+    },
+    dot: {
+        marginLeft: 3,
+        alignContent: 'center',
+        height: 5.5,
+        width: 5.5,
+        backgroundColor: _color2['default'].white,
+        borderRadius: 4
+    },
+    dot_empty: {
+        marginLeft: 2,
+        alignContent: 'center',
+        height: 5.5,
+        width: 5.5,
+        backgroundColor: _color2['default'].colorPrimary,
+        borderColor: _color2['default'].white,
+        borderWidth: 0.5,
+        borderRadius: 4
+    },
+    brand: {
+        marginLeft: 8,
+        marginTop: 2,
+        fontSize: 12,
+        color: _color2['default'].white
+    },
+    time: {
+        flex: 1,
+        marginLeft: 8,
+        marginTop: 2,
+        fontSize: 12,
+        color: _color2['default'].white,
+        alignItems: 'center',
+        alignSelf: 'center'
+    },
+    wifi: {
+        marginTop: 5,
+        marginLeft: 8,
+        resizeMode: 'contain',
+        height: 9,
+        width: 13
+    },
+    batteryArea: {
+        flex: 1,
+        marginLeft: 8,
+        flexDirection: 'row-reverse',
+        alignContent: 'flex-end'
+    },
+    battery: {
+        marginTop: 5,
+        marginLeft: 4,
+        resizeMode: 'contain',
+        height: 10,
+        width: 25
+    }
+});
+exports['default'] = StatusBarDark;
+
+/***/ }),
+/* 144 */,
+/* 145 */,
+/* 146 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactSketchapp = __webpack_require__(28);
+
+var _color = __webpack_require__(140);
+
+var _color2 = _interopRequireDefault(_color);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var TitleBarDark = function TitleBarDark(props) {
+    return _react2['default'].createElement(
+        _reactSketchapp.View,
+        { name: 'Title',
+            style: styles.row },
+        _react2['default'].createElement(
+            _reactSketchapp.View,
+            { name: 'left', style: styles.left },
+            _react2['default'].createElement(_reactSketchapp.Image, { name: 'backButton',
+                source: props.backIcon,
+                style: styles.back }),
+            _react2['default'].createElement(
+                _reactSketchapp.Text,
+                { name: 'leftText',
+                    style: styles.leftText },
+                props.leftText
+            )
+        ),
+        _react2['default'].createElement(
+            _reactSketchapp.Text,
+            { name: 'title',
+                style: styles.title },
+            props.title
+        ),
+        _react2['default'].createElement(
+            _reactSketchapp.View,
+            { name: 'right', style: styles.right },
+            _react2['default'].createElement(
+                _reactSketchapp.Text,
+                { name: 'rightMenu',
+                    style: styles.rightText },
+                props.rightText
+            )
+        )
+    );
+}; /**
+    * components/Row.js
+    * Define your component using platform-independent primitives
+    */
+
+
+var styles = _reactSketchapp.StyleSheet.create({
+    row: {
+        backgroundColor: _color2['default'].colorPrimary,
+        width: 375,
+        height: 44,
+        flexDirection: 'row',
+        flex: 1,
+        paddingLeft: 12,
+        paddingRight: 12,
+        borderBottomColor: '#d7d7d7',
+        borderWidth: 0.5
+    },
+    left: {
+        flex: 1,
+        flexDirection: 'row',
+        alignContent: 'flex-start',
+        height: 44,
+        fontFaceName: ''
+
+    },
+    back: {
+        marginTop: 2,
+        alignSelf: 'center',
+        height: 15,
+        width: 8,
+        resizeMode: 'contain'
+    },
+
+    leftText: {
+        flex: 1,
+        alignContent: 'center',
+        justifyContent: 'center',
+        alignSelf: 'center',
+        height: 44,
+        marginLeft: 4,
+        color: _color2['default'].white,
+        fontSize: 16
+
+    },
+    title: {
+        flex: 1,
+        alignContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 44,
+        color: _color2['default'].white,
+        fontSize: 18
+    },
+
+    right: {
+        flex: 1,
+        flexDirection: 'row-reverse',
+        height: 44
+    },
+    rightText: {
+
+        alignContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: _color2['default'].white,
+        fontSize: 16
+
+    }
+});
+exports['default'] = TitleBarDark;
+
+/***/ }),
+/* 147 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _TitleBarLight = __webpack_require__(148);
+
+var _TitleBarLight2 = _interopRequireDefault(_TitleBarLight);
+
+var _TitleBarDark = __webpack_require__(146);
+
+var _TitleBarDark2 = _interopRequireDefault(_TitleBarDark);
+
+var _TitleBarSearch = __webpack_require__(149);
+
+var _TitleBarSearch2 = _interopRequireDefault(_TitleBarSearch);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+module.exports = {
+    TitleBarDark: _TitleBarDark2["default"],
+    TitleBarLight: _TitleBarLight2["default"],
+    TitleBarSearch: _TitleBarSearch2["default"]
+};
+
+/***/ }),
+/* 148 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactSketchapp = __webpack_require__(28);
+
+var _color = __webpack_require__(140);
+
+var _color2 = _interopRequireDefault(_color);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var TitleBarLight = function TitleBarLight(props) {
+    return _react2['default'].createElement(
+        _reactSketchapp.View,
+        { name: 'Title',
+            style: styles.row },
+        _react2['default'].createElement(
+            _reactSketchapp.View,
+            { name: 'left', style: styles.left },
+            _react2['default'].createElement(_reactSketchapp.Image, { name: 'backButton',
+                source: props.backIcon,
+                style: styles.back }),
+            _react2['default'].createElement(
+                _reactSketchapp.Text,
+                { name: 'leftText',
+                    style: styles.leftText },
+                props.leftText
+            )
+        ),
+        _react2['default'].createElement(
+            _reactSketchapp.Text,
+            { name: 'title',
+                style: styles.title },
+            props.title
+        ),
+        _react2['default'].createElement(
+            _reactSketchapp.View,
+            { name: 'right', style: styles.right },
+            _react2['default'].createElement(
+                _reactSketchapp.Text,
+                { name: 'rightMenu',
+                    style: styles.rightText },
+                props.rightText
+            )
+        )
+    );
+}; /**
+    * components/Row.js
+    * Define your component using platform-independent primitives
+    */
+
+
+var styles = _reactSketchapp.StyleSheet.create({
+    row: {
+        backgroundColor: _color2['default'].white,
+        width: 375,
+        height: 44,
+        flexDirection: 'row',
+        flex: 1,
+        paddingLeft: 12,
+        paddingRight: 12,
+        borderBottomColor: '#d7d7d7',
+        borderWidth: 0.5
+    },
+    left: {
+        flex: 1,
+        flexDirection: 'row',
+        alignContent: 'flex-start',
+        height: 44,
+        fontFaceName: '',
+        color: _color2['default'].colorPrimary
+
+    },
+    back: {
+        marginTop: 2,
+        alignSelf: 'center',
+        height: 15,
+        width: 8,
+        resizeMode: 'contain'
+    },
+
+    leftText: {
+        flex: 1,
+        alignContent: 'center',
+        justifyContent: 'center',
+        alignSelf: 'center',
+        height: 44,
+        marginLeft: 4,
+        color: _color2['default'].colorPrimary,
+        fontSize: 16
+
+    },
+    title: {
+        flex: 1,
+        alignContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 44,
+        color: _color2['default'].text_black,
+        fontSize: 18
+    },
+
+    right: {
+        flex: 1,
+        flexDirection: 'row-reverse',
+        height: 44
+    },
+    rightText: {
+
+        alignContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: _color2['default'].colorPrimary,
+        fontSize: 16
+
+    }
+});
+exports['default'] = TitleBarLight;
+
+/***/ }),
+/* 149 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _cancelIcon;
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactSketchapp = __webpack_require__(28);
+
+var _color = __webpack_require__(140);
+
+var _color2 = _interopRequireDefault(_color);
+
+var _index = __webpack_require__(141);
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; } /**
+                                                                                                                                                                                                                   * components/Row.js
+                                                                                                                                                                                                                   * Define your component using platform-independent primitives
+                                                                                                                                                                                                                   */
+
+
+var IMG_ENDPOINT = String(_index2['default'].IMAGE_SERVER_URL) + ':' + String(_index2['default'].IMAGE_SERVER_PORT) + '/';
+
+var TitleBarSearch = function TitleBarSearch(props) {
+    return _react2['default'].createElement(
+        _reactSketchapp.View,
+        { name: 'Title',
+            style: styles.row },
+        _react2['default'].createElement(
+            _reactSketchapp.View,
+            { name: 'left', style: styles.left },
+            _react2['default'].createElement(_reactSketchapp.Image, { name: 'searchIcon',
+                source: IMG_ENDPOINT + 'search@2x.png',
+                style: styles.searchIcon }),
+            _react2['default'].createElement(
+                _reactSketchapp.Text,
+                { name: 'leftText',
+                    style: styles.searchText },
+                props.searchText
+            ),
+            _react2['default'].createElement(_reactSketchapp.Image, { name: 'cancelIcon',
+                source: IMG_ENDPOINT + 'cancel@2x.png',
+                style: styles.cancelIcon })
+        ),
+        _react2['default'].createElement(
+            _reactSketchapp.View,
+            { name: 'right', style: styles.right },
+            _react2['default'].createElement(
+                _reactSketchapp.Text,
+                { name: 'rightMenu',
+                    style: styles.rightText },
+                '\u53D6\u6D88'
+            )
+        )
+    );
+};
+
+var styles = _reactSketchapp.StyleSheet.create({
+    row: {
+        backgroundColor: _color2['default'].background_native,
+        width: 375,
+        height: 44,
+        flexDirection: 'row',
+        flex: 1,
+        paddingLeft: 12,
+        paddingRight: 12,
+        borderBottomColor: '#d7d7d7',
+        borderWidth: 0.5
+
+    },
+    left: {
+        marginTop: 8,
+        flexDirection: 'row',
+        height: 28,
+        width: 304,
+        fontFaceName: '',
+        color: _color2['default'].white,
+        backgroundColor: _color2['default'].white,
+        borderRadius: 8
+
+    },
+    searchIcon: {
+        marginTop: 2,
+        marginLeft: 10,
+        alignSelf: 'center',
+        height: 15,
+        width: 15,
+        resizeMode: 'contain'
+    },
+    cancelIcon: (_cancelIcon = {
+        marginTop: 2,
+        marginLeft: 10,
+        alignSelf: 'center'
+    }, _defineProperty(_cancelIcon, 'marginLeft', 144), _defineProperty(_cancelIcon, 'height', 18), _defineProperty(_cancelIcon, 'width', 18), _defineProperty(_cancelIcon, 'resizeMode', 'contain'), _cancelIcon),
+
+    searchText: {
+        marginTop: 2,
+        alignContent: 'center',
+        marginLeft: 8,
+        color: _color2['default'].text_import9,
+        fontSize: 16,
+        fontFamily: "PingFang SC"
+
+    },
+
+    right: {
+        flex: 1,
+        flexDirection: 'row-reverse',
+        height: 44
+    },
+    rightText: {
+
+        alignContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: _color2['default'].colorPrimary,
+        fontSize: 16
+
+    }
+});
+exports['default'] = TitleBarSearch;
 
 /***/ })
 /******/ ]);

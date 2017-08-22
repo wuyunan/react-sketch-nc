@@ -26,6 +26,7 @@ export default {
     transparent: 'transparent',
     white: "#FFFFFF",
     black: "#000000",
+    text_black: "#030303",
     tab_black_bg: "#27323A",
     tab_white_bg: "#F8F8F8",
     toast_bg: 'rgba(10,10,10, 1)',

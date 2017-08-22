@@ -7133,7 +7133,7 @@ var Row = function Row(_ref4) {
             ),
             _react2['default'].createElement(
                 _reactSketchapp.Text,
-                { name: 'Row Title', style: styles.rowTitle },
+                { name: 'Row TitleBarDark', style: styles.rowTitle },
                 title
             ),
             _react2['default'].createElement(
