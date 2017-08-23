@@ -22,11 +22,15 @@ const TitleBarSearch = props =>
           style={styles.row}>
 
         <View name='left' style={styles.left}>
-            <Image name='searchIcon'
-                   source={`${IMG_ENDPOINT}search@2x.png`}
-                   style={styles.searchIcon}/>
-            <Text name='leftText'
-                  style={styles.searchText}>{props.searchText}</Text>
+            <View name='left1' style={styles.left1}>
+                <Image name='searchIcon'
+                       source={`${IMG_ENDPOINT}search@2x.png`}
+                       style={styles.searchIcon}/>
+                <Text name='leftText'
+                      style={styles.searchText}>
+                    {props.searchText}
+                </Text>
+            </View>
             <Image name='cancelIcon'
                    source={`${IMG_ENDPOINT}cancel@2x.png`}
                    style={styles.cancelIcon}/>
@@ -66,6 +70,11 @@ const styles = StyleSheet.create({
         borderRadius: 8,
 
     },
+    left1: {
+        flexDirection: 'row',
+        height: 28,
+        width: 275,
+    },
     searchIcon: {
         marginTop: 2,
         marginLeft: 10,
@@ -76,9 +85,7 @@ const styles = StyleSheet.create({
     },
     cancelIcon: {
         marginTop: 2,
-        marginLeft: 10,
         alignSelf: 'center',
-        marginLeft: 144,
         height: 18,
         width: 18,
         resizeMode: 'contain',

@@ -7,6 +7,11 @@ Install the dependencies
 npm install
 ```
 
+Server images
+```
+npm run serve
+```
+
 Run with live reloading in Sketch
 ```
 npm run render
