@@ -3,14 +3,13 @@
  * Define your component using platform-independent primitives
  */
 import React from 'react';
-
 // import {
 //     Image,
 //     View,
 //     Text,
 //     StyleSheet
 // } from 'react-sketchapp';
-import { Image, View, Text, StyleSheet } from 'react-primitives';
+import {Image, StyleSheet, Text, View} from 'react-primitives';
 
 import Color from "../../common/color";
 import Config from "../../config/index";
@@ -18,7 +17,7 @@ import Config from "../../config/index";
 const IMG_ENDPOINT = `${Config.IMAGE_SERVER_URL}:${Config.IMAGE_SERVER_PORT}/`;
 
 
-const TitleBarSearch = props =>
+const SearchBarWithCancel = props =>
     <View name='Title'
           style={styles.row}>
 
@@ -117,4 +116,4 @@ const styles = StyleSheet.create({
 
     }
 });
-export default TitleBarSearch;
+export default SearchBarWithCancel;

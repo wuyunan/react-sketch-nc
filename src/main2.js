@@ -4,13 +4,15 @@
  */
 import React from 'react';
 import {Artboard, render, StyleSheet, View,} from 'react-sketchapp';
-import SettingRow from './components/SettingRow';
+import SettingRow from './components/ListItem/SettingRow';
 import {StatusBarDark} from "./components/StatusBar/index";
-import {TitleBarDark, TitleBarSearch} from "./components/Navigation/index";
+import {SearchBarWithCancel, TitleBarDark} from "./components/Navigation/index";
 import Config from "./config/index";
 import Tabbar from "./components/Tabbar/Tabbar";
 import Tab from "./components/Tab/Tab";
 import TagFlow from "./components/Tag/TagFlow";
+import TwoRow from "./components/ListItem/TwoRow";
+import SearchBar from "./components/Navigation/SearchBar";
 
 const IMG_ENDPOINT = `${Config.IMAGE_SERVER_URL}:${Config.IMAGE_SERVER_PORT}/`;
 
@@ -182,16 +184,19 @@ const Tags = [
     },
 ];
 const Demo5 = props => (
-        <Artboard>
+    <Artboard name='自动生成'>
             <StatusBarDark/>
             <TitleBarDark backIcon={`${IMG_ENDPOINT}back@2x.png`}
                           title="标题"
                           rightText="编辑"
                           leftText="上一个"/>
+        <SearchBar/>
+        <Tab tabs={DATA}/>
             <TagFlow tags={Tags}/>
-
+        <TwoRow icon={`${IMG_ENDPOINT}money@2x.png`}
+                title='主标题主标题'
+                subtitle='副标题副标题'/>
             <SettingList/>
-
 
             <Tabbar tabbars={DATA}/>
 
@@ -201,9 +206,9 @@ const Demo5 = props => (
 const Demo6 = props => (
         <Artboard>
             <StatusBarDark/>
-            <TitleBarSearch searchText="搜索店铺内容"
+            <SearchBarWithCancel searchText="搜索店铺内容"
             />
-            <Tab tabbars={DATA}/>
+            <Tab tabbars={DATA} underline={true}/>
 
         </Artboard>
     )

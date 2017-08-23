@@ -3,28 +3,28 @@
  * Define your component using platform-independent primitives
  */
 import React from 'react';
-
 // import {
 //     Image,
 //     View,
 //     Text,
 //     StyleSheet
 // } from 'react-sketchapp';
-import { Image, View, Text, StyleSheet } from 'react-primitives';
+import {StyleSheet, View} from 'react-primitives';
 
 
 import Color from "../../common/color";
 import TabItem from "./TabItem";
 
-const Tab = ({tabbars}) =>
-    <View name='TabbarItem'
+const Tab = ({tabs}) =>
+    <View name='Tab'
           style={styles.row}>
 
-        {tabbars.map(tabbar => (
-            <TabItem text={tabbar.text}
-                        style={styles.tabbarItem}
-                        selected={tabbar.selected}
-                        icon={tabbar.icon}
+        {tabs.map(tab => (
+            <TabItem text={tab.text}
+                     style={styles.tabItem}
+                     selected={tab.selected}
+                     icon={tab.icon}
+                     underline={tab.underline}
             />
         ))}
 
@@ -35,19 +35,16 @@ const styles = StyleSheet.create({
     row: {
         backgroundColor: Color.white,
         flexDirection: 'row',
-        alignContent: 'center',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        height: 50,
+        alignContent: 'flex-start',
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+        height: 42,
         width: 375,
-        paddingLeft: 30,
-        paddingRight: 30,
         shadowColor: '#DDDDDD',
         shadowOffsetY: -1,
         shadowBlur: 4,
-
     },
-    tabbarItem: {
+    tabItem: {
         flex: 1,
     },
 

@@ -9,8 +9,8 @@ import React from 'react';
 //     Text,
 //     StyleSheet
 // } from 'react-sketchapp';
-import {Image, View, Text, StyleSheet} from 'react-primitives';
-import Color from "../common/color";
+import {Image, StyleSheet, Text, View} from 'react-primitives';
+import Color from "../../common/color";
 
 
 const SettingRow = props =>

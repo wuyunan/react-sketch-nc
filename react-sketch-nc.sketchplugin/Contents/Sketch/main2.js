@@ -8737,7 +8737,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactSketchapp = __webpack_require__(57);
 
-var _SettingRow = __webpack_require__(156);
+var _SettingRow = __webpack_require__(192);
 
 var _SettingRow2 = _interopRequireDefault(_SettingRow);
 
@@ -8760,6 +8760,14 @@ var _Tab2 = _interopRequireDefault(_Tab);
 var _TagFlow = __webpack_require__(190);
 
 var _TagFlow2 = _interopRequireDefault(_TagFlow);
+
+var _TwoRow = __webpack_require__(193);
+
+var _TwoRow2 = _interopRequireDefault(_TwoRow);
+
+var _SearchBar = __webpack_require__(194);
+
+var _SearchBar2 = _interopRequireDefault(_SearchBar);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -8910,13 +8918,18 @@ var Tags = [{
 var Demo5 = function Demo5(props) {
     return _react2['default'].createElement(
         _reactSketchapp.Artboard,
-        null,
+        { name: '\u81EA\u52A8\u751F\u6210' },
         _react2['default'].createElement(_index.StatusBarDark, null),
         _react2['default'].createElement(_index2.TitleBarDark, { backIcon: IMG_ENDPOINT + 'back@2x.png',
             title: '\u6807\u9898',
             rightText: '\u7F16\u8F91',
             leftText: '\u4E0A\u4E00\u4E2A' }),
+        _react2['default'].createElement(_SearchBar2['default'], null),
+        _react2['default'].createElement(_Tab2['default'], { tabs: DATA }),
         _react2['default'].createElement(_TagFlow2['default'], { tags: Tags }),
+        _react2['default'].createElement(_TwoRow2['default'], { icon: IMG_ENDPOINT + 'money@2x.png',
+            title: '\u4E3B\u6807\u9898\u4E3B\u6807\u9898',
+            subtitle: '\u526F\u6807\u9898\u526F\u6807\u9898' }),
         _react2['default'].createElement(SettingList, null),
         _react2['default'].createElement(_Tabbar2['default'], { tabbars: DATA })
     );
@@ -8926,9 +8939,9 @@ var Demo6 = function Demo6(props) {
         _reactSketchapp.Artboard,
         null,
         _react2['default'].createElement(_index.StatusBarDark, null),
-        _react2['default'].createElement(_index2.TitleBarSearch, { searchText: '\u641C\u7D22\u5E97\u94FA\u5185\u5BB9'
+        _react2['default'].createElement(_index2.SearchBarWithCancel, { searchText: '\u641C\u7D22\u5E97\u94FA\u5185\u5BB9'
         }),
-        _react2['default'].createElement(_Tab2['default'], { tabbars: DATA })
+        _react2['default'].createElement(_Tab2['default'], { tabbars: DATA, underline: true })
     );
 };
 
@@ -17546,87 +17559,7 @@ Image.propTypes = propTypes;
 exports.default = Image;
 
 /***/ }),
-/* 156 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactPrimitives = __webpack_require__(9);
-
-var _color = __webpack_require__(11);
-
-var _color2 = _interopRequireDefault(_color);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-// import {
-//     Image,
-//     View,
-//     Text,
-//     StyleSheet
-// } from 'react-sketchapp';
-var SettingRow = function SettingRow(props) {
-    return _react2['default'].createElement(
-        _reactPrimitives.View,
-        { name: 'Settingrow',
-            style: styles.row },
-        _react2['default'].createElement(_reactPrimitives.Image, { name: 'icon',
-            source: props.icon,
-            style: styles.icon }),
-        _react2['default'].createElement(
-            _reactPrimitives.Text,
-            { name: 'title',
-                style: styles.text },
-            props.subtitle
-        )
-    );
-}; /**
-    * components/Row.js
-    * Define your component using platform-independent primitives
-    */
-
-
-var styles = _reactPrimitives.StyleSheet.create({
-    row: {
-        backgroundColor: '#F9FDFF',
-        width: 375,
-        height: 44,
-        flexDirection: 'row',
-        flex: 1,
-        paddingLeft: 12,
-        paddingRight: 12,
-        borderBottomColor: '#ebebeb',
-        borderWidth: 0.5
-    },
-    icon: {
-        marginTop: 10,
-        height: 24,
-        width: 24,
-        alignItems: 'center',
-        resizeMode: 'contain'
-    },
-    text: {
-        marginTop: 2,
-        marginLeft: 12,
-        alignContent: 'center',
-        alignSelf: 'center',
-        justifyContent: 'center',
-        height: 44,
-        fontSize: 15,
-        color: _color2['default'].text_black,
-        fontFamily: "PingFang SC"
-    }
-
-});
-exports['default'] = SettingRow;
-
-/***/ }),
+/* 156 */,
 /* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20530,16 +20463,21 @@ var _TitleBarDark = __webpack_require__(185);
 
 var _TitleBarDark2 = _interopRequireDefault(_TitleBarDark);
 
-var _TitleBarSearch = __webpack_require__(186);
+var _SearchBarWithCancel = __webpack_require__(195);
 
-var _TitleBarSearch2 = _interopRequireDefault(_TitleBarSearch);
+var _SearchBarWithCancel2 = _interopRequireDefault(_SearchBarWithCancel);
+
+var _SearchBar = __webpack_require__(194);
+
+var _SearchBar2 = _interopRequireDefault(_SearchBar);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 module.exports = {
     TitleBarDark: _TitleBarDark2["default"],
     TitleBarLight: _TitleBarLight2["default"],
-    TitleBarSearch: _TitleBarSearch2["default"]
+    SearchBarWithCancel: _SearchBarWithCancel2["default"],
+    SearchBar: _SearchBar2["default"]
 };
 
 /***/ }),
@@ -20810,154 +20748,7 @@ var styles = _reactPrimitives.StyleSheet.create({
 exports['default'] = TitleBarDark;
 
 /***/ }),
-/* 186 */
-/***/ (function(module, exports, __webpack_require__) {
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(2);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactPrimitives = __webpack_require__(9);
-
-var _color = __webpack_require__(11);
-
-var _color2 = _interopRequireDefault(_color);
-
-var _index = __webpack_require__(39);
-
-var _index2 = _interopRequireDefault(_index);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-/**
- * components/Row.js
- * Define your component using platform-independent primitives
- */
-var IMG_ENDPOINT = String(_index2['default'].IMAGE_SERVER_URL) + ':' + String(_index2['default'].IMAGE_SERVER_PORT) + '/';
-
-// import {
-//     Image,
-//     View,
-//     Text,
-//     StyleSheet
-// } from 'react-sketchapp';
-
-
-var TitleBarSearch = function TitleBarSearch(props) {
-    return _react2['default'].createElement(
-        _reactPrimitives.View,
-        { name: 'Title',
-            style: styles.row },
-        _react2['default'].createElement(
-            _reactPrimitives.View,
-            { name: 'left', style: styles.left },
-            _react2['default'].createElement(
-                _reactPrimitives.View,
-                { name: 'left1', style: styles.left1 },
-                _react2['default'].createElement(_reactPrimitives.Image, { name: 'searchIcon',
-                    source: IMG_ENDPOINT + 'search@2x.png',
-                    style: styles.searchIcon }),
-                _react2['default'].createElement(
-                    _reactPrimitives.Text,
-                    { name: 'leftText',
-                        style: styles.searchText },
-                    props.searchText
-                )
-            ),
-            _react2['default'].createElement(_reactPrimitives.Image, { name: 'cancelIcon',
-                source: IMG_ENDPOINT + 'cancel@2x.png',
-                style: styles.cancelIcon })
-        ),
-        _react2['default'].createElement(
-            _reactPrimitives.View,
-            { name: 'right', style: styles.right },
-            _react2['default'].createElement(
-                _reactPrimitives.Text,
-                { name: 'rightMenu',
-                    style: styles.rightText },
-                '\u53D6\u6D88'
-            )
-        )
-    );
-};
-
-var styles = _reactPrimitives.StyleSheet.create({
-    row: {
-        backgroundColor: _color2['default'].background_native,
-        width: 375,
-        height: 44,
-        flexDirection: 'row',
-        flex: 1,
-        paddingLeft: 12,
-        paddingRight: 12,
-        borderBottomColor: '#d7d7d7',
-        borderWidth: 0.5
-
-    },
-    left: {
-        marginTop: 8,
-        flexDirection: 'row',
-        height: 28,
-        width: 304,
-        fontFaceName: '',
-        color: _color2['default'].white,
-        backgroundColor: _color2['default'].white,
-        borderRadius: 8
-
-    },
-    left1: {
-        flexDirection: 'row',
-        height: 28,
-        width: 275
-    },
-    searchIcon: {
-        marginTop: 2,
-        marginLeft: 10,
-        alignSelf: 'center',
-        height: 15,
-        width: 15,
-        resizeMode: 'contain'
-    },
-    cancelIcon: {
-        marginTop: 2,
-        alignSelf: 'center',
-        height: 18,
-        width: 18,
-        resizeMode: 'contain'
-    },
-
-    searchText: {
-        marginTop: 2,
-        alignContent: 'center',
-        marginLeft: 8,
-        color: _color2['default'].text_import9,
-        fontSize: 16,
-        fontFamily: "PingFang SC"
-
-    },
-
-    right: {
-        flex: 1,
-        flexDirection: 'row-reverse',
-        height: 44
-    },
-    rightText: {
-
-        alignContent: 'center',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: _color2['default'].colorPrimary,
-        fontSize: 16
-
-    }
-});
-exports['default'] = TitleBarSearch;
-
-/***/ }),
+/* 186 */,
 /* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21061,21 +20852,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
  * Define your component using platform-independent primitives
  */
 var Tab = function Tab(_ref) {
-    var tabbars = _ref.tabbars;
+    var tabs = _ref.tabs;
     return _react2['default'].createElement(
         _reactPrimitives.View,
-        { name: 'TabbarItem',
+        { name: 'Tab',
             style: styles.row },
-        tabbars.map(function (tabbar) {
-            return _react2['default'].createElement(_TabItem2['default'], { text: tabbar.text,
-                style: styles.tabbarItem,
-                selected: tabbar.selected,
-                icon: tabbar.icon
+        tabs.map(function (tab) {
+            return _react2['default'].createElement(_TabItem2['default'], { text: tab.text,
+                style: styles.tabItem,
+                selected: tab.selected,
+                icon: tab.icon,
+                underline: tab.underline
             });
         })
     );
 };
-
 // import {
 //     Image,
 //     View,
@@ -21088,19 +20879,16 @@ var styles = _reactPrimitives.StyleSheet.create({
     row: {
         backgroundColor: _color2['default'].white,
         flexDirection: 'row',
-        alignContent: 'center',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        height: 50,
+        alignContent: 'flex-start',
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+        height: 42,
         width: 375,
-        paddingLeft: 30,
-        paddingRight: 30,
         shadowColor: '#DDDDDD',
         shadowOffsetY: -1,
         shadowBlur: 4
-
     },
-    tabbarItem: {
+    tabItem: {
         flex: 1
     }
 
@@ -21136,17 +20924,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
 var TabItem = function TabItem(props) {
     return _react2['default'].createElement(
         _reactPrimitives.View,
-        { name: 'TabbarItem',
-            style: styles.row },
+        { name: 'TabItem',
+            style: props.selected && props.underline ? styles.rowSelected : styles.row },
         _react2['default'].createElement(
             _reactPrimitives.Text,
             { name: 'text', style: props.selected ? styles.textSelected : styles.text },
             props.text
-        ),
-        _react2['default'].createElement(_reactPrimitives.View, {
-            name: 'icon',
-            style: styles.icon
-        })
+        )
     );
 }; /**
     * components/Row.js
@@ -21158,26 +20942,31 @@ var styles = _reactPrimitives.StyleSheet.create({
     row: {
         backgroundColor: _color2['default'].white,
         flexDirection: 'column',
-        alignContent: 'center',
-        alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        height: 42,
+        marginLeft: 10,
+        paddingLeft: 15,
+        paddingRight: 15
     },
+    rowSelected: {
+        backgroundColor: _color2['default'].white,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        borderBottomColor: _color2['default'].colorPrimary,
+        borderWidth: 2,
+        height: 42,
+        paddingLeft: 15,
+        paddingRight: 15
 
-    icon: {
-        resizeMode: 'contain',
-        height: 22,
-        width: 22
     },
 
     text: {
-        marginTop: 4.5,
         color: _color2['default'].text_import9,
-        fontSize: 10
+        fontSize: 15
     },
     textSelected: {
-        marginTop: 4.5,
         color: _color2['default'].colorPrimary,
-        fontSize: 10
+        fontSize: 15
     }
 });
 exports['default'] = TabItem;
@@ -21325,6 +21114,441 @@ var styles = _reactPrimitives.StyleSheet.create({
     }
 });
 exports['default'] = Tag;
+
+/***/ }),
+/* 192 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactPrimitives = __webpack_require__(9);
+
+var _color = __webpack_require__(11);
+
+var _color2 = _interopRequireDefault(_color);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+// import {
+//     Image,
+//     View,
+//     Text,
+//     StyleSheet
+// } from 'react-sketchapp';
+var SettingRow = function SettingRow(props) {
+    return _react2['default'].createElement(
+        _reactPrimitives.View,
+        { name: 'Settingrow',
+            style: styles.row },
+        _react2['default'].createElement(_reactPrimitives.Image, { name: 'icon',
+            source: props.icon,
+            style: styles.icon }),
+        _react2['default'].createElement(
+            _reactPrimitives.Text,
+            { name: 'title',
+                style: styles.text },
+            props.subtitle
+        )
+    );
+}; /**
+    * components/Row.js
+    * Define your component using platform-independent primitives
+    */
+
+
+var styles = _reactPrimitives.StyleSheet.create({
+    row: {
+        backgroundColor: '#F9FDFF',
+        width: 375,
+        height: 44,
+        flexDirection: 'row',
+        flex: 1,
+        paddingLeft: 12,
+        paddingRight: 12,
+        borderBottomColor: '#ebebeb',
+        borderWidth: 0.5
+    },
+    icon: {
+        marginTop: 10,
+        height: 24,
+        width: 24,
+        alignItems: 'center',
+        resizeMode: 'contain'
+    },
+    text: {
+        marginTop: 2,
+        marginLeft: 12,
+        alignContent: 'center',
+        alignSelf: 'center',
+        justifyContent: 'center',
+        height: 44,
+        fontSize: 15,
+        color: _color2['default'].text_black,
+        fontFamily: "PingFang SC"
+    }
+
+});
+exports['default'] = SettingRow;
+
+/***/ }),
+/* 193 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactPrimitives = __webpack_require__(9);
+
+var _color = __webpack_require__(11);
+
+var _color2 = _interopRequireDefault(_color);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+// import {
+//     Image,
+//     View,
+//     Text,
+//     StyleSheet
+// } from 'react-sketchapp';
+var TwoRow = function TwoRow(props) {
+    return _react2['default'].createElement(
+        _reactPrimitives.View,
+        { name: 'TwoRow',
+            style: styles.row },
+        _react2['default'].createElement(_reactPrimitives.Image, { name: 'icon',
+            source: props.icon,
+            style: styles.icon }),
+        _react2['default'].createElement(
+            _reactPrimitives.View,
+            { style: styles.right },
+            _react2['default'].createElement(
+                _reactPrimitives.Text,
+                { name: 'title',
+                    style: styles.title },
+                props.title
+            ),
+            _react2['default'].createElement(
+                _reactPrimitives.Text,
+                { name: 'subtitle',
+                    style: styles.subTitle },
+                props.subtitle
+            )
+        )
+    );
+}; /**
+    * components/Row.js
+    * Define your component using platform-independent primitives
+    */
+
+
+var styles = _reactPrimitives.StyleSheet.create({
+    row: {
+        backgroundColor: '#F9FDFF',
+        width: 375,
+        height: 60,
+        flexDirection: 'row',
+        flex: 1,
+        paddingLeft: 12,
+        paddingRight: 12,
+        borderBottomColor: '#ebebeb',
+        borderWidth: 0.5
+    },
+    icon: {
+        marginTop: 12,
+        marginRight: 12,
+        height: 36,
+        width: 36,
+        alignItems: 'center',
+        resizeMode: 'contain'
+    },
+    title: {
+        marginTop: 2,
+        fontSize: 16,
+        color: _color2['default'].text_black,
+        fontFamily: "PingFang SC"
+    },
+    subTitle: {
+        fontSize: 13,
+        color: _color2['default'].text_import9,
+        fontFamily: "PingFang SC"
+    },
+    right: {
+        flexDirection: 'column',
+        alignContent: 'center',
+        justifyContent: 'center'
+    }
+
+});
+exports['default'] = TwoRow;
+
+/***/ }),
+/* 194 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactPrimitives = __webpack_require__(9);
+
+var _color = __webpack_require__(11);
+
+var _color2 = _interopRequireDefault(_color);
+
+var _index = __webpack_require__(39);
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+/**
+ * components/Row.js
+ * Define your component using platform-independent primitives
+ */
+var IMG_ENDPOINT = String(_index2['default'].IMAGE_SERVER_URL) + ':' + String(_index2['default'].IMAGE_SERVER_PORT) + '/';
+// import {
+//     Image,
+//     View,
+//     Text,
+//     StyleSheet
+// } from 'react-sketchapp';
+
+
+var SearchBar = function SearchBar(props) {
+    return _react2['default'].createElement(
+        _reactPrimitives.View,
+        { name: 'Title',
+            style: styles.row },
+        _react2['default'].createElement(
+            _reactPrimitives.View,
+            { name: 'left1', style: styles.left },
+            _react2['default'].createElement(_reactPrimitives.Image, { name: 'searchIcon',
+                source: IMG_ENDPOINT + 'search@2x.png',
+                style: styles.searchIcon }),
+            _react2['default'].createElement(
+                _reactPrimitives.Text,
+                { name: 'leftText',
+                    style: styles.searchText },
+                props.searchText ? props.searchText : "搜索"
+            )
+        )
+    );
+};
+
+var styles = _reactPrimitives.StyleSheet.create({
+    row: {
+        backgroundColor: _color2['default'].background_native,
+        width: 375,
+        height: 44,
+        flexDirection: 'row',
+        flex: 1,
+        paddingLeft: 12,
+        paddingRight: 12,
+        alignContent: 'center',
+        justifyContent: 'center'
+        // borderBottomColor: '#d7d7d7',
+        // borderWidth: 0.5,
+
+
+    },
+    left: {
+        marginTop: 8,
+        flexDirection: 'row',
+        height: 28,
+        width: 336,
+        fontFaceName: '',
+        color: _color2['default'].white,
+        backgroundColor: _color2['default'].white,
+        alignContent: 'center',
+        justifyContent: 'center',
+        borderRadius: 8
+
+    },
+
+    searchIcon: {
+        marginTop: 2,
+        marginLeft: 10,
+        alignSelf: 'center',
+        height: 15,
+        width: 15,
+        resizeMode: 'contain'
+    },
+    searchText: {
+        marginTop: 2,
+        alignContent: 'center',
+        justifyContent: 'center',
+        marginLeft: 8,
+        color: _color2['default'].text_import9,
+        fontSize: 14,
+        fontFamily: "PingFang SC"
+
+    }
+
+});
+exports['default'] = SearchBar;
+
+/***/ }),
+/* 195 */
+/***/ (function(module, exports, __webpack_require__) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactPrimitives = __webpack_require__(9);
+
+var _color = __webpack_require__(11);
+
+var _color2 = _interopRequireDefault(_color);
+
+var _index = __webpack_require__(39);
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+/**
+ * components/Row.js
+ * Define your component using platform-independent primitives
+ */
+var IMG_ENDPOINT = String(_index2['default'].IMAGE_SERVER_URL) + ':' + String(_index2['default'].IMAGE_SERVER_PORT) + '/';
+// import {
+//     Image,
+//     View,
+//     Text,
+//     StyleSheet
+// } from 'react-sketchapp';
+
+
+var SearchBarWithCancel = function SearchBarWithCancel(props) {
+    return _react2['default'].createElement(
+        _reactPrimitives.View,
+        { name: 'Title',
+            style: styles.row },
+        _react2['default'].createElement(
+            _reactPrimitives.View,
+            { name: 'left', style: styles.left },
+            _react2['default'].createElement(
+                _reactPrimitives.View,
+                { name: 'left1', style: styles.left1 },
+                _react2['default'].createElement(_reactPrimitives.Image, { name: 'searchIcon',
+                    source: IMG_ENDPOINT + 'search@2x.png',
+                    style: styles.searchIcon }),
+                _react2['default'].createElement(
+                    _reactPrimitives.Text,
+                    { name: 'leftText',
+                        style: styles.searchText },
+                    props.searchText
+                )
+            ),
+            _react2['default'].createElement(_reactPrimitives.Image, { name: 'cancelIcon',
+                source: IMG_ENDPOINT + 'cancel@2x.png',
+                style: styles.cancelIcon })
+        ),
+        _react2['default'].createElement(
+            _reactPrimitives.View,
+            { name: 'right', style: styles.right },
+            _react2['default'].createElement(
+                _reactPrimitives.Text,
+                { name: 'rightMenu',
+                    style: styles.rightText },
+                '\u53D6\u6D88'
+            )
+        )
+    );
+};
+
+var styles = _reactPrimitives.StyleSheet.create({
+    row: {
+        backgroundColor: _color2['default'].background_native,
+        width: 375,
+        height: 44,
+        flexDirection: 'row',
+        flex: 1,
+        paddingLeft: 12,
+        paddingRight: 12,
+        borderBottomColor: '#d7d7d7',
+        borderWidth: 0.5
+
+    },
+    left: {
+        marginTop: 8,
+        flexDirection: 'row',
+        height: 28,
+        width: 304,
+        fontFaceName: '',
+        color: _color2['default'].white,
+        backgroundColor: _color2['default'].white,
+        borderRadius: 8
+
+    },
+    left1: {
+        flexDirection: 'row',
+        height: 28,
+        width: 275
+    },
+    searchIcon: {
+        marginTop: 2,
+        marginLeft: 10,
+        alignSelf: 'center',
+        height: 15,
+        width: 15,
+        resizeMode: 'contain'
+    },
+    cancelIcon: {
+        marginTop: 2,
+        alignSelf: 'center',
+        height: 18,
+        width: 18,
+        resizeMode: 'contain'
+    },
+
+    searchText: {
+        marginTop: 2,
+        alignContent: 'center',
+        marginLeft: 8,
+        color: _color2['default'].text_import9,
+        fontSize: 16,
+        fontFamily: "PingFang SC"
+
+    },
+
+    right: {
+        flex: 1,
+        flexDirection: 'row-reverse',
+        height: 44
+    },
+    rightText: {
+
+        alignContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: _color2['default'].colorPrimary,
+        fontSize: 16
+
+    }
+});
+exports['default'] = SearchBarWithCancel;
 
 /***/ })
 /******/ ]);

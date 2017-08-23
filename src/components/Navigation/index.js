@@ -1,9 +1,11 @@
 import TitleBarLight from "./TitleBarLight";
 import TitleBarDark from "./TitleBarDark";
-import TitleBarSearch from "./TitleBarSearch"
+import SearchBarWithCancel from "./SearchBarWithCancel"
+import SearchBar from "./SearchBar";
 
 module.exports = {
     TitleBarDark: TitleBarDark,
     TitleBarLight: TitleBarLight,
-    TitleBarSearch: TitleBarSearch,
+    SearchBarWithCancel: SearchBarWithCancel,
+    SearchBar: SearchBar,
 }

@@ -9,7 +9,7 @@ import React from 'react';
 //     Text,
 //     StyleSheet
 // } from 'react-sketchapp';
-import { Image, View, Text, StyleSheet } from 'react-primitives';
+import {Text, View} from 'react-primitives';
 
 const Row = props =>
     <View>

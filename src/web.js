@@ -4,7 +4,7 @@
  */
 import React from 'react';
 
-import SettingRow from './components/SettingRow';
+import SettingRow from './components/ListItem/SettingRow';
 import StatusBarDark from "./components/StatusBar/StatusBarDark";
 import TitleBarDark from "./components/Navigation/TitleBarDark";
 import Config from "./config/index";
