@@ -4,12 +4,14 @@
  */
 import React from 'react';
 
-import {
-    Image,
-    View,
-    Text,
-    StyleSheet
-} from 'react-sketchapp';
+// import {
+//     Image,
+//     View,
+//     Text,
+//     StyleSheet
+// } from 'react-sketchapp';
+import { Image, View, Text, StyleSheet } from 'react-primitives';
+
 
 import Color from "../../common/color";
 

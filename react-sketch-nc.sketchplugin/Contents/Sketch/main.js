@@ -1224,7 +1224,7 @@ function defineRefPropWarningGetter(props, displayName) {
  */
 var ReactElement = function (type, key, ref, self, source, owner, props) {
   var element = {
-    // This tag allow us to uniquely identify this as a React Element
+    // This Tag allow us to uniquely identify this as a React Element
     $$typeof: REACT_ELEMENT_TYPE,
 
     // Built-in properties that belong on the element
@@ -4085,7 +4085,7 @@ module.exports = ReactNoopUpdateQueue;
 
 
 
-// The Symbol used to tag the ReactElement type. If there is no native Symbol
+// The Symbol used to Tag the ReactElement type. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
 
 var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('react.element') || 0xeac7;
@@ -5474,8 +5474,8 @@ var genericComponentClass = null;
 var textComponentClass = null;
 
 var ReactHostComponentInjection = {
-  // This accepts a class that receives the tag string. This is a catch all
-  // that can render any kind of tag.
+  // This accepts a class that receives the Tag string. This is a catch all
+  // that can render any kind of Tag.
   injectGenericComponentClass: function (componentClass) {
     genericComponentClass = componentClass;
   },
@@ -5487,13 +5487,13 @@ var ReactHostComponentInjection = {
 };
 
 /**
- * Get a host internal component class for a specific tag.
+ * Get a host internal component class for a specific Tag.
  *
  * @param {ReactElement} element The element to create.
  * @return {function} The internal class constructor function.
  */
 function createInternalComponent(element) {
-  !genericComponentClass ? process.env.NODE_ENV !== 'production' ? invariant(false, 'There is no registered component for the tag %s', element.type) : _prodInvariant('111', element.type) : void 0;
+  !genericComponentClass ? process.env.NODE_ENV !== 'production' ? invariant(false, 'There is no registered component for the Tag %s', element.type) : _prodInvariant('111', element.type) : void 0;
   return new genericComponentClass(element);
 }
 
@@ -8092,7 +8092,7 @@ module.exports = KeyEscapeUtils;
 var ReactElement = __webpack_require__(9);
 
 /**
- * Create a factory that creates HTML tag elements.
+ * Create a factory that creates HTML Tag elements.
  *
  * @private
  */
@@ -9390,7 +9390,7 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
     }
 
     if (process.env.NODE_ENV !== 'production') {
-      // This is a tag to indicate that the use of these method names is ok,
+      // This is a Tag to indicate that the use of these method names is ok,
       // since it's used with createClass. If it's not, then it's likely a
       // mistake so we'll warn you to use the static property, property
       // initializer or constructor respectively.
@@ -12513,7 +12513,7 @@ module.exports = getNextDebugID;
 
 
 
-// The Symbol used to tag the ReactElement type. If there is no native Symbol
+// The Symbol used to Tag the ReactElement type. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
 
 var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('react.element') || 0xeac7;

@@ -3,11 +3,13 @@
  * Define your component using platform-independent primitives
  */
 import React from 'react';
-import {
-    View,
-    Text,
-    StyleSheet
-} from 'react-primitives';
+// import {
+//     Image,
+//     View,
+//     Text,
+//     StyleSheet
+// } from 'react-sketchapp';
+import { Image, View, Text, StyleSheet } from 'react-primitives';
 
 const Row = props =>
     <View>

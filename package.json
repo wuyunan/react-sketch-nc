@@ -9,7 +9,8 @@
     "watch": "skpm build --watch",
     "render": "skpm build --watch --run",
     "render:once": "skpm build --run",
-    "link-plugin": "skpm link"
+    "link-plugin": "skpm link",
+    "web": "react run src/web.js"
   },
   "author": "wuyunan <wuyunan888@126.com>",
   "license": "MIT",
@@ -19,6 +20,7 @@
     ]
   },
   "dependencies": {
+    "nwb": "^0.15.6",
     "prop-types": "^15.5.8",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -34,7 +36,6 @@
   },
   "devDependencies": {
     "skpm": "^0.10.2",
-    "serve": "^5.1.5",
     "prop-types": "^15.5.10",
     "serve": "^5.1.5"
   }

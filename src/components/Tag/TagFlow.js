@@ -10,21 +10,20 @@ import React from 'react';
 //     Text,
 //     StyleSheet
 // } from 'react-sketchapp';
-import { Image, View, Text, StyleSheet } from 'react-primitives';
+import {Image, View, Text, StyleSheet} from 'react-primitives';
 
 
 import Color from "../../common/color";
-import TabbarItem from "./TabbarItem";
+import Tag from "./Tag";
 
-const Tabbar = ({tabbars}) =>
-    <View name='TabbarItem'
-          style={styles.row}>
+const TagFlow = ({tags}) =>
+    <View name='tag'
+          style={styles.tagFlow}>
 
-        {tabbars.map(tabbar => (
-            <TabbarItem text={tabbar.text}
-                        style={styles.tabbarItem}
-                        selected={tabbar.selected}
-                        icon={tabbar.icon}
+        {tags.map(tag => (
+            <Tag text={tag.text}
+                 selected={tag.selected}
+
             />
         ))}
 
@@ -32,24 +31,22 @@ const Tabbar = ({tabbars}) =>
 
 
 const styles = StyleSheet.create({
-    row: {
+    tagFlow: {
         backgroundColor: Color.white,
         flexDirection: 'row',
-        alignContent: 'center',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        height: 50,
+        alignContent: 'flex-start',
         width: 375,
         paddingLeft: 30,
         paddingRight: 30,
         shadowColor: '#DDDDDD',
         shadowOffsetY: -1,
         shadowBlur: 4,
-
+        flexWrap:'wrap',
+        padding:10,
     },
-    tabbarItem: {
+    tag: {
         flex: 1,
     },
 
 });
-export default Tabbar;
+export default TagFlow;
