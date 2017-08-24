@@ -17,6 +17,7 @@ import Swipe from "./components/Swipe/Swipe";
 import Dimensions from "./common/dimensions";
 import Space from "./components/Tag/Space";
 import ThreeImageRow from "./components/ListItem/ThreeImageRow";
+import GridView from "./components/GridView/GridView";
 
 const IMG_ENDPOINT = `${Config.IMAGE_SERVER_URL}:${Config.IMAGE_SERVER_PORT}/`;
 
@@ -226,8 +227,15 @@ const Demo5 = props => (
 
         <Swipe items={Tags}/>
         <Space/>
-
-        <TwoRow icon={`${IMG_ENDPOINT}money@2x.png`}
+        <GridView items={Tags}/>
+        <Space/>
+        <TwoRow icon={`${IMG_ENDPOINT}image1.jpg`}
+                title='主标题主标题'
+                subtitle='副标题副标题'/>
+        <TwoRow icon={`${IMG_ENDPOINT}image2.jpg`}
+                title='主标题主标题'
+                subtitle='副标题副标题'/>
+        <TwoRow icon={`${IMG_ENDPOINT}image3.jpg`}
                 title='主标题主标题'
                 subtitle='副标题副标题'/>
         <Space/>

@@ -12,10 +12,10 @@ import React from 'react';
 import {StyleSheet, View} from 'react-primitives';
 
 
-import {Color, Dimensions} from "../common/index";
-import TabbarItem from "./Tabbar/TabbarItem";
+import {Color, Dimensions} from "../../common/index";
+import TabbarItem from "../Tabbar/TabbarItem";
 
-class Gridview extends React.Component {
+class GridView extends React.Component {
     render() {
         return (
             <View name='TabbarItem'
@@ -50,11 +50,11 @@ const styles = StyleSheet.create({
             shadowBlur: 4,
         },
         item: {
-            width: ( Dimensions.ScreenWidth - 60 - 5 * 4) / 5,
+            width: ( Dimensions.ScreenWidth - 60 - 5 * 3) / 4,
             margin: 5,
         }
         ,
 
     })
 ;
-export default Gridview;
+export default GridView;

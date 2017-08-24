@@ -14,6 +14,7 @@ import {StyleSheet, View} from 'react-primitives';
 
 import {Color, Dimensions} from "../../common/index";
 import TabbarItem from "../Tabbar/TabbarItem";
+import CircleIndicator from "./CircleIndicator";
 
 class Swipe extends React.Component {
     render() {
@@ -31,13 +32,7 @@ class Swipe extends React.Component {
                             /></View>
                     ))}
                 </View>
-                <View name='in' style={styles.row2}>
-                    <View style={styles.dot}/>
-                    <View style={styles.dot}/>
-                    <View style={styles.dot_empty}/>
-                    <View style={styles.dot}/>
-                    <View style={styles.dot}/>
-                </View>
+                <CircleIndicator/>
             </View>)
     }
 }

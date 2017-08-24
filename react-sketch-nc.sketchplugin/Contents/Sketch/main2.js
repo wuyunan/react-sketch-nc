@@ -8925,13 +8925,17 @@ var _ThreeImageRow = __webpack_require__(198);
 
 var _ThreeImageRow2 = _interopRequireDefault(_ThreeImageRow);
 
+        var _GridView = __webpack_require__(200);
+
+        var _GridView2 = _interopRequireDefault(_GridView);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-var IMG_ENDPOINT = String(_index4['default'].IMAGE_SERVER_URL) + ':' + String(_index4['default'].IMAGE_SERVER_PORT) + '/'; /**
-                                                                                                                            * sketch-entry.js
-                                                                                                                            * same setup as other examples
-                                                                                                                            */
-
+        /**
+         * sketch-entry.js
+         * same setup as other examples
+         */
+        var IMG_ENDPOINT = String(_index4['default'].IMAGE_SERVER_URL) + ':' + String(_index4['default'].IMAGE_SERVER_PORT) + '/';
 
 var styles = _reactSketchapp.StyleSheet.create({
     artboard: {
@@ -9105,7 +9109,20 @@ var Demo5 = function Demo5(props) {
         _react2['default'].createElement(_Space2['default'], null),
         _react2['default'].createElement(_Swipe2['default'], { items: Tags }),
         _react2['default'].createElement(_Space2['default'], null),
-        _react2['default'].createElement(_TwoRow2['default'], { icon: IMG_ENDPOINT + 'money@2x.png',
+        _react2['default'].createElement(_GridView2['default'], {items: Tags}),
+        _react2['default'].createElement(_Space2['default'], null),
+        _react2['default'].createElement(_TwoRow2['default'], {
+            icon: IMG_ENDPOINT + 'image1.jpg',
+            title: '\u4E3B\u6807\u9898\u4E3B\u6807\u9898',
+            subtitle: '\u526F\u6807\u9898\u526F\u6807\u9898'
+        }),
+        _react2['default'].createElement(_TwoRow2['default'], {
+            icon: IMG_ENDPOINT + 'image2.jpg',
+            title: '\u4E3B\u6807\u9898\u4E3B\u6807\u9898',
+            subtitle: '\u526F\u6807\u9898\u526F\u6807\u9898'
+        }),
+        _react2['default'].createElement(_TwoRow2['default'], {
+            icon: IMG_ENDPOINT + 'image3.jpg',
             title: '\u4E3B\u6807\u9898\u4E3B\u6807\u9898',
             subtitle: '\u526F\u6807\u9898\u526F\u6807\u9898' }),
         _react2['default'].createElement(_Space2['default'], null),
@@ -17820,14 +17837,13 @@ var SettingRow = function (_React$Component) {
 
 var styles = _reactPrimitives.StyleSheet.create({
     row: {
-        backgroundColor: '#F9FDFF',
+        backgroundColor: _index.Color.white,
         width: _index.Dimensions.ScreenWidth,
         height: 44,
         flexDirection: 'row',
-        flex: 1,
         paddingLeft: 12,
         paddingRight: 12,
-        borderBottomColor: '#ebebeb',
+        borderBottomColor: _index.Color.divider_secondary,
         borderWidth: 0.5
     },
     icon: {
@@ -21943,7 +21959,6 @@ var styles = _reactPrimitives.StyleSheet.create({
         width: _index.Dimensions.ScreenWidth,
         height: 60,
         flexDirection: 'row',
-        flex: 1,
         paddingLeft: 12,
         paddingRight: 12,
         borderBottomColor: _index.Color.divider_secondary,
@@ -21955,11 +21970,11 @@ var styles = _reactPrimitives.StyleSheet.create({
         height: 36,
         width: 36,
         alignItems: 'center',
-        resizeMode: 'contain'
+        resizeMode: 'stretch'
     },
     title: {
-        marginTop: 2,
-        fontSize: 16,
+        marginTop: 3,
+        fontSize: 15,
         color: _index.Color.text_black,
         fontFamily: "PingFang SC"
     },
@@ -21998,6 +22013,10 @@ var _index = __webpack_require__(6);
 var _TabbarItem = __webpack_require__(87);
 
 var _TabbarItem2 = _interopRequireDefault(_TabbarItem);
+
+        var _CircleIndicator = __webpack_require__(199);
+
+        var _CircleIndicator2 = _interopRequireDefault(_CircleIndicator);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -22050,15 +22069,7 @@ var Swipe = function (_React$Component) {
                             );
                         })
                     ),
-                    _react2['default'].createElement(
-                        _reactPrimitives.View,
-                        { name: 'in', style: styles.row2 },
-                        _react2['default'].createElement(_reactPrimitives.View, { style: styles.dot }),
-                        _react2['default'].createElement(_reactPrimitives.View, { style: styles.dot }),
-                        _react2['default'].createElement(_reactPrimitives.View, { style: styles.dot_empty }),
-                        _react2['default'].createElement(_reactPrimitives.View, { style: styles.dot }),
-                        _react2['default'].createElement(_reactPrimitives.View, { style: styles.dot })
-                    )
+                    _react2['default'].createElement(_CircleIndicator2['default'], null)
                 );
             }
 
@@ -22354,7 +22365,309 @@ var styles = _reactPrimitives.StyleSheet.create({
 });
 exports['default'] = ThreeImageRow;
 
-/***/ })
+        /***/
+    }),
+    /* 199 */
+    /***/ (function (module, exports, __webpack_require__) {
+
+        Object.defineProperty(exports, "__esModule", {
+            value: true
+        });
+
+        var _createClass = function () {
+            function defineProperties(target, props) {
+                for (var i = 0; i < props.length; i++) {
+                    var descriptor = props[i];
+                    descriptor.enumerable = descriptor.enumerable || false;
+                    descriptor.configurable = true;
+                    if ("value" in descriptor) descriptor.writable = true;
+                    Object.defineProperty(target, descriptor.key, descriptor);
+                }
+            }
+
+            return function (Constructor, protoProps, staticProps) {
+                if (protoProps) defineProperties(Constructor.prototype, protoProps);
+                if (staticProps) defineProperties(Constructor, staticProps);
+                return Constructor;
+            };
+        }();
+
+        var _react = __webpack_require__(2);
+
+        var _react2 = _interopRequireDefault(_react);
+
+        var _reactPrimitives = __webpack_require__(5);
+
+        var _index = __webpack_require__(6);
+
+        function _interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {'default': obj};
+        }
+
+        function _classCallCheck(instance, Constructor) {
+            if (!(instance instanceof Constructor)) {
+                throw new TypeError("Cannot call a class as a function");
+            }
+        }
+
+        function _possibleConstructorReturn(self, call) {
+            if (!self) {
+                throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            }
+            return call && (typeof call === "object" || typeof call === "function") ? call : self;
+        }
+
+        function _inherits(subClass, superClass) {
+            if (typeof superClass !== "function" && superClass !== null) {
+                throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+            }
+            subClass.prototype = Object.create(superClass && superClass.prototype, {
+                constructor: {
+                    value: subClass,
+                    enumerable: false,
+                    writable: true,
+                    configurable: true
+                }
+            });
+            if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+        }
+
+        /**
+         * components/Row.js
+         * Define your component using platform-independent primitives
+         */
+
+// import {
+//     Image,
+//     View,
+//     Text,
+//     StyleSheet
+// } from 'react-sketchapp';
+
+
+        var CircleIndicator = function (_React$Component) {
+            _inherits(CircleIndicator, _React$Component);
+
+            function CircleIndicator() {
+                _classCallCheck(this, CircleIndicator);
+
+                return _possibleConstructorReturn(this, (CircleIndicator.__proto__ || Object.getPrototypeOf(CircleIndicator)).apply(this, arguments));
+            }
+
+            _createClass(CircleIndicator, [{
+                key: 'render',
+                value: function () {
+                    function render() {
+                        return _react2['default'].createElement(
+                            _reactPrimitives.View,
+                            {name: 'in', style: styles.row2},
+                            _react2['default'].createElement(_reactPrimitives.View, {style: styles.dot_empty}),
+                            _react2['default'].createElement(_reactPrimitives.View, {style: styles.dot}),
+                            _react2['default'].createElement(_reactPrimitives.View, {style: styles.dot}),
+                            _react2['default'].createElement(_reactPrimitives.View, {style: styles.dot}),
+                            _react2['default'].createElement(_reactPrimitives.View, {style: styles.dot})
+                        );
+                    }
+
+                    return render;
+                }()
+            }]);
+
+            return CircleIndicator;
+        }(_react2['default'].Component);
+
+        var styles = _reactPrimitives.StyleSheet.create({
+            row: {
+                backgroundColor: _index.Color.white,
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                alignContent: 'center',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: _index.Dimensions.ScreenWidth,
+                paddingLeft: 12,
+                paddingRight: 12
+            },
+            row2: {
+                backgroundColor: _index.Color.white,
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                alignContent: 'center',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: _index.Dimensions.ScreenWidth,
+                height: 16,
+                marginTop: 2
+
+            },
+
+            dot: {
+                marginLeft: 3,
+                alignContent: 'center',
+                height: 4,
+                width: 4,
+                backgroundColor: _index.Color.text_import9,
+                borderRadius: 2
+            },
+            dot_empty: {
+                marginLeft: 3,
+                alignContent: 'center',
+                height: 4,
+                width: 4,
+                backgroundColor: _index.Color.text_red,
+                borderRadius: 2
+            }
+
+        });
+        exports['default'] = CircleIndicator;
+
+        /***/
+    }),
+    /* 200 */
+    /***/ (function (module, exports, __webpack_require__) {
+
+        Object.defineProperty(exports, "__esModule", {
+            value: true
+        });
+
+        var _createClass = function () {
+            function defineProperties(target, props) {
+                for (var i = 0; i < props.length; i++) {
+                    var descriptor = props[i];
+                    descriptor.enumerable = descriptor.enumerable || false;
+                    descriptor.configurable = true;
+                    if ("value" in descriptor) descriptor.writable = true;
+                    Object.defineProperty(target, descriptor.key, descriptor);
+                }
+            }
+
+            return function (Constructor, protoProps, staticProps) {
+                if (protoProps) defineProperties(Constructor.prototype, protoProps);
+                if (staticProps) defineProperties(Constructor, staticProps);
+                return Constructor;
+            };
+        }();
+
+        var _react = __webpack_require__(2);
+
+        var _react2 = _interopRequireDefault(_react);
+
+        var _reactPrimitives = __webpack_require__(5);
+
+        var _index = __webpack_require__(6);
+
+        var _TabbarItem = __webpack_require__(87);
+
+        var _TabbarItem2 = _interopRequireDefault(_TabbarItem);
+
+        function _interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {'default': obj};
+        }
+
+        function _classCallCheck(instance, Constructor) {
+            if (!(instance instanceof Constructor)) {
+                throw new TypeError("Cannot call a class as a function");
+            }
+        }
+
+        function _possibleConstructorReturn(self, call) {
+            if (!self) {
+                throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+            }
+            return call && (typeof call === "object" || typeof call === "function") ? call : self;
+        }
+
+        function _inherits(subClass, superClass) {
+            if (typeof superClass !== "function" && superClass !== null) {
+                throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+            }
+            subClass.prototype = Object.create(superClass && superClass.prototype, {
+                constructor: {
+                    value: subClass,
+                    enumerable: false,
+                    writable: true,
+                    configurable: true
+                }
+            });
+            if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+        }
+
+        /**
+         * components/Row.js
+         * Define your component using platform-independent primitives
+         */
+
+// import {
+//     Image,
+//     View,
+//     Text,
+//     StyleSheet
+// } from 'react-sketchapp';
+
+
+        var GridView = function (_React$Component) {
+            _inherits(GridView, _React$Component);
+
+            function GridView() {
+                _classCallCheck(this, GridView);
+
+                return _possibleConstructorReturn(this, (GridView.__proto__ || Object.getPrototypeOf(GridView)).apply(this, arguments));
+            }
+
+            _createClass(GridView, [{
+                key: 'render',
+                value: function () {
+                    function render() {
+                        return _react2['default'].createElement(
+                            _reactPrimitives.View,
+                            {
+                                name: 'TabbarItem',
+                                style: styles.row
+                            },
+                            this.props.items.map(function (item) {
+                                return _react2['default'].createElement(
+                                    _reactPrimitives.View,
+                                    {style: styles.item},
+                                    _react2['default'].createElement(_TabbarItem2['default'], {
+                                        text: item.text,
+                                        selected: item.selected,
+                                        icon: item.icon
+                                    })
+                                );
+                            })
+                        );
+                    }
+
+                    return render;
+                }()
+            }]);
+
+            return GridView;
+        }(_react2['default'].Component);
+
+        var styles = _reactPrimitives.StyleSheet.create({
+            row: {
+                backgroundColor: _index.Color.white,
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                alignContent: 'center',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: _index.Dimensions.ScreenWidth,
+                padding: 12,
+                shadowColor: '#DDDDDD',
+                shadowOffsetY: -1,
+                shadowBlur: 4
+            },
+            item: {
+                width: (_index.Dimensions.ScreenWidth - 60 - 5 * 3) / 4,
+                margin: 5
+            }
+
+        });
+        exports['default'] = GridView;
+
+        /***/ })
 /******/ ]);
   if (key === 'default' && typeof exports === 'function') {
     exports(context);

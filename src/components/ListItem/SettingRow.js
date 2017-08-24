@@ -31,14 +31,13 @@ class SettingRow extends React.Component {
 
 const styles = StyleSheet.create({
     row: {
-        backgroundColor: '#F9FDFF',
+        backgroundColor: Color.white,
         width: Dimensions.ScreenWidth,
         height: 44,
         flexDirection: 'row',
-        flex: 1,
         paddingLeft: 12,
         paddingRight: 12,
-        borderBottomColor: '#ebebeb',
+        borderBottomColor: Color.divider_secondary,
         borderWidth: 0.5,
     },
     icon: {
