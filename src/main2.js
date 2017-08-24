@@ -21,6 +21,7 @@ import GridView from "./components/GridView/GridView";
 import ListView from "./components/ListView/ListView";
 import TabBarItem from "./components/Tabbar/TabBarItem";
 import {DATA, IMAGES, SettingData, Tags, TwoData} from "./data/index";
+import Carousel from "./components/Swipe/Carousel";
 
 const IMG_ENDPOINT = `${Config.IMAGE_SERVER_URL}:${Config.IMAGE_SERVER_PORT}/`;
 
@@ -93,7 +94,8 @@ const Demo6 = props => (
 
         <Swipe items={Tags}/>
         <Space/>
-
+        <Carousel images={`${IMG_ENDPOINT}image1.jpg`}/>
+        <Space/>
 
         <ListView
             items={TwoData}
@@ -123,10 +125,10 @@ const Demo6 = props => (
 export default (context) => {
 
 
-    let xml = <Demo5/>;
-    render(xml, context.document.addBlankPage());
+    // let xml = <Demo5/>;
+    // render(xml, context.document.addBlankPage());
     let xml2 = <Demo6/>;
-    render(xml2, context.document.addBlankPage());
+    render(xml2, context.document.currentPage());
 
 }
 
