@@ -22,7 +22,7 @@
 
 ```
 
-``` jspx
+``` html
    <ListView
             items={TwoData}
             renderItem={(item) =>
