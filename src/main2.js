@@ -191,17 +191,17 @@ const Tags = [
 const IMAGES = [
     {
         text: '支付宝',
-        icon: `${IMG_ENDPOINT}alipay@2x.png`,
+        icon: `${IMG_ENDPOINT}image1.jpg`,
         selected: true,
     },
     {
         text: '口碑',
-        icon: `${IMG_ENDPOINT}koubei@2x.png`,
+        icon: `${IMG_ENDPOINT}image2.jpg`,
         selected: false,
     },
     {
         text: '朋友',
-        icon: `${IMG_ENDPOINT}friend@2x.png`,
+        icon: `${IMG_ENDPOINT}image3.jpg`,
         selected: false,
     },
     {
@@ -234,10 +234,12 @@ const Demo5 = props => (
         <ThreeImageRow
             title="区块在挖矿过程中产生，所谓的挖矿就是区块在挖矿过程中产生，所谓的挖矿就是区块在挖矿过程中产生，所谓的挖矿就是"
             images={IMAGES}
-            from="from"
-            comment=""
-            time=""
+            from="悟空问答"
+            comment="2"
+            time="刚刚"
         />
+        <Space/>
+
             <SettingList/>
 
             <Tabbar tabbars={DATA}/>

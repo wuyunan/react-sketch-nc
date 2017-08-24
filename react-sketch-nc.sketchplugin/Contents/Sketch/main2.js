@@ -9074,15 +9074,15 @@ var Tags = [{
 
 var IMAGES = [{
     text: '支付宝',
-    icon: IMG_ENDPOINT + 'alipay@2x.png',
+    icon: IMG_ENDPOINT + 'image1.jpg',
     selected: true
 }, {
     text: '口碑',
-    icon: IMG_ENDPOINT + 'koubei@2x.png',
+    icon: IMG_ENDPOINT + 'image2.jpg',
     selected: false
 }, {
     text: '朋友',
-    icon: IMG_ENDPOINT + 'friend@2x.png',
+    icon: IMG_ENDPOINT + 'image3.jpg',
     selected: false
 }, {
     text: '我的',
@@ -9112,10 +9112,11 @@ var Demo5 = function Demo5(props) {
         _react2['default'].createElement(_ThreeImageRow2['default'], {
             title: '\u533A\u5757\u5728\u6316\u77FF\u8FC7\u7A0B\u4E2D\u4EA7\u751F\uFF0C\u6240\u8C13\u7684\u6316\u77FF\u5C31\u662F\u533A\u5757\u5728\u6316\u77FF\u8FC7\u7A0B\u4E2D\u4EA7\u751F\uFF0C\u6240\u8C13\u7684\u6316\u77FF\u5C31\u662F\u533A\u5757\u5728\u6316\u77FF\u8FC7\u7A0B\u4E2D\u4EA7\u751F\uFF0C\u6240\u8C13\u7684\u6316\u77FF\u5C31\u662F',
             images: IMAGES,
-            from: 'from',
-            comment: '',
-            time: ''
+            from: '\u609F\u7A7A\u95EE\u7B54',
+            comment: '2',
+            time: '\u521A\u521A'
         }),
+        _react2['default'].createElement(_Space2['default'], null),
         _react2['default'].createElement(SettingList, null),
         _react2['default'].createElement(_Tabbar2['default'], { tabbars: DATA })
     );
@@ -22257,8 +22258,38 @@ var ThreeImageRow = function (_React$Component) {
                         this.props.images.slice(0, 3).map(function (item) {
                             return _react2['default'].createElement(_reactPrimitives.Image, { name: 'icon',
                                 source: item.icon,
-                                style: styles.icon });
+                                style: styles.image
+                            });
                         })
+                    ),
+                    _react2['default'].createElement(
+                        _reactPrimitives.View,
+                        {style: styles.bottom},
+                        _react2['default'].createElement(
+                            _reactPrimitives.Text,
+                            {
+                                name: 'from',
+                                style: styles.from
+                            },
+                            this.props.from
+                        ),
+                        _react2['default'].createElement(
+                            _reactPrimitives.Text,
+                            {
+                                name: 'comment',
+                                style: styles.comment
+                            },
+                            this.props.comment,
+                            '\u8BC4\u8BBA'
+                        ),
+                        _react2['default'].createElement(
+                            _reactPrimitives.Text,
+                            {
+                                name: 'time',
+                                style: styles.time
+                            },
+                            this.props.time
+                        )
                     )
                 );
             }
@@ -22270,38 +22301,56 @@ var ThreeImageRow = function (_React$Component) {
     return ThreeImageRow;
 }(_react2['default'].Component);
 
+        var imageWidth = (_index.Dimensions.ScreenWidth - 44) / 3;
 var styles = _reactPrimitives.StyleSheet.create({
     row: {
         backgroundColor: '#F9FDFF',
         width: _index.Dimensions.ScreenWidth,
         flexDirection: 'column',
-        flex: 1,
         paddingLeft: 12,
-        paddingRight: 12,
-        borderBottomColor: '#ebebeb',
-        borderWidth: 0.5
+        paddingRight: 12
     },
     item: {
         width: _index.Dimensions.ScreenWidth - 24,
         flexDirection: 'row',
-        flex: 1
-
+        justifyContent: 'space-between'
     },
-    icon: {
-        marginTop: 10,
-        height: (_index.Dimensions.ScreenWidth - 24) / 3,
-        width: (_index.Dimensions.ScreenWidth - 24) / 3,
-        resizeMode: 'contain'
+    bottom: {
+        marginTop: 8,
+        width: _index.Dimensions.ScreenWidth,
+        flexDirection: 'row'
+    },
+    image: {
+        height: imageWidth * 0.75,
+        width: imageWidth,
+        resizeMode: 'stretch'
     },
     title: {
         marginTop: 12,
         alignContent: 'flex-start',
         fontSize: 15,
         color: _index.Color.text_black,
-        line: 2,
+        fontFamily: "PingFang SC"
+    },
+    from: {
+        alignContent: 'flex-start',
+        fontSize: 13,
+        color: _index.Color.text_import9,
+        fontFamily: "PingFang SC"
+    },
+    comment: {
+        alignContent: 'flex-start',
+        fontSize: 13,
+        marginLeft: 5,
+        color: _index.Color.text_import9,
+        fontFamily: "PingFang SC"
+    }, time: {
+        marginLeft: 5,
+        alignContent: 'flex-start',
+        fontSize: 13,
+        color: _index.Color.text_import9,
         fontFamily: "PingFang SC"
     }
-
 });
 exports['default'] = ThreeImageRow;
 

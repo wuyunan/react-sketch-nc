@@ -28,46 +28,78 @@ class ThreeImageRow extends React.Component {
 
                         <Image name='icon'
                                source={item.icon}
-                               style={styles.icon}/>
+                               style={styles.image}/>
 
                     ))}
+                </View>
+                <View style={styles.bottom}>
+                    <Text name='from'
+                          style={styles.from}>
+                        {this.props.from}
+                    </Text>
+                    <Text name='comment'
+                          style={styles.comment}>
+                        {this.props.comment}评论
+                    </Text>
+                    <Text name='time'
+                          style={styles.time}>
+                        {this.props.time}
+                    </Text>
                 </View>
             </View>)
     }
 
 }
 
+const imageWidth = (Dimensions.ScreenWidth - 44) / 3;
 const styles = StyleSheet.create({
     row: {
         backgroundColor: '#F9FDFF',
         width: Dimensions.ScreenWidth,
         flexDirection: 'column',
-        flex: 1,
         paddingLeft: 12,
         paddingRight: 12,
-        borderBottomColor: '#ebebeb',
-        borderWidth: 0.5,
     },
     item: {
         width: Dimensions.ScreenWidth - 24,
         flexDirection: 'row',
-        flex: 1,
-
+        justifyContent: 'space-between',
     },
-    icon: {
-        marginTop: 10,
-        height: (Dimensions.ScreenWidth - 24) / 3,
-        width: (Dimensions.ScreenWidth - 24) / 3,
-        resizeMode: 'contain',
+    bottom: {
+        marginTop: 8,
+        width: Dimensions.ScreenWidth,
+        flexDirection: 'row',
+    },
+    image: {
+        height: imageWidth * 0.75,
+        width: imageWidth,
+        resizeMode: 'stretch',
     },
     title: {
         marginTop: 12,
         alignContent: 'flex-start',
         fontSize: 15,
         color: Color.text_black,
-        line: 2,
+        fontFamily: "PingFang SC",
+    },
+    from: {
+        alignContent: 'flex-start',
+        fontSize: 13,
+        color: Color.text_import9,
+        fontFamily: "PingFang SC",
+    },
+    comment: {
+        alignContent: 'flex-start',
+        fontSize: 13,
+        marginLeft: 5,
+        color: Color.text_import9,
+        fontFamily: "PingFang SC",
+    }, time: {
+        marginLeft: 5,
+        alignContent: 'flex-start',
+        fontSize: 13,
+        color: Color.text_import9,
         fontFamily: "PingFang SC",
     }
-
 });
 export default ThreeImageRow;
