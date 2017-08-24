@@ -3,35 +3,38 @@
  * Define your component using platform-independent primitives
  */
 import React from 'react';
-
 // import {
 //     Image,
 //     View,
 //     Text,
 //     StyleSheet
 // } from 'react-sketchapp';
-import { Image, View, Text, StyleSheet } from 'react-primitives';
+import {Image, StyleSheet, Text, View} from 'react-primitives';
 
 
 import Color from "../../common/color";
 
 
-const TabbarItem = props =>
-    <View name='TabbarItem'
-          style={styles.row}>
+class TabbarItem extends React.Component {
+    render() {
+        return (
+            <View name='TabbarItem'
+                  style={styles.row}>
 
-        <Image
-            name='icon'
-            style={styles.icon}
-            source={props.icon}
-        />
+                <Image
+                    name='icon'
+                    style={styles.icon}
+                    source={this.props.icon}
+                />
 
-        <Text name='text' style={props.selected ? styles.textSelected : styles.text}>
-            {props.text}
-        </Text>
+                <Text name='text' style={this.props.selected ? styles.textSelected : styles.text}>
+                    {this.props.text}
+                </Text>
 
-    </View>
-
+            </View>
+        )
+    }
+}
 
 const styles = StyleSheet.create({
     row: {

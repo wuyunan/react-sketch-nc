@@ -17,21 +17,25 @@ import Config from "../../config/index";
 const IMG_ENDPOINT = `${Config.IMAGE_SERVER_URL}:${Config.IMAGE_SERVER_PORT}/`;
 
 
-const SearchBar = props =>
-    <View name='Title'
-          style={styles.row}>
+class SearchBar extends React.Component {
+    render() {
+        return (
+            <View name='Title'
+                  style={styles.row}>
 
-        <View name='left1' style={styles.left}>
-            <Image name='searchIcon'
-                   source={`${IMG_ENDPOINT}search@2x.png`}
-                   style={styles.searchIcon}/>
-            <Text name='leftText'
-                  style={styles.searchText}>
-                {props.searchText ? props.searchText : "搜索"}
-            </Text>
-        </View>
+                <View name='left1' style={styles.left}>
+                    <Image name='searchIcon'
+                           source={`${IMG_ENDPOINT}search@2x.png`}
+                           style={styles.searchIcon}/>
+                    <Text name='leftText'
+                          style={styles.searchText}>
+                        {this.props.searchText ? this.props.searchText : "搜索"}
+                    </Text>
+                </View>
 
-    </View>
+            </View>)
+    }
+}
 
 
 const styles = StyleSheet.create({

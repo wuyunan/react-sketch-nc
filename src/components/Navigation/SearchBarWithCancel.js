@@ -17,33 +17,37 @@ import Config from "../../config/index";
 const IMG_ENDPOINT = `${Config.IMAGE_SERVER_URL}:${Config.IMAGE_SERVER_PORT}/`;
 
 
-const SearchBarWithCancel = props =>
-    <View name='Title'
-          style={styles.row}>
+class SearchBarWithCancel extends React.Component {
+    render() {
+        return (
+            <View name='Title'
+                  style={styles.row}>
 
-        <View name='left' style={styles.left}>
-            <View name='left1' style={styles.left1}>
-                <Image name='searchIcon'
-                       source={`${IMG_ENDPOINT}search@2x.png`}
-                       style={styles.searchIcon}/>
-                <Text name='leftText'
-                      style={styles.searchText}>
-                    {props.searchText}
-                </Text>
+                <View name='left' style={styles.left}>
+                    <View name='left1' style={styles.left1}>
+                        <Image name='searchIcon'
+                               source={`${IMG_ENDPOINT}search@2x.png`}
+                               style={styles.searchIcon}/>
+                        <Text name='leftText'
+                              style={styles.searchText}>
+                            {this.props.searchText}
+                        </Text>
+                    </View>
+                    <Image name='cancelIcon'
+                           source={`${IMG_ENDPOINT}cancel@2x.png`}
+                           style={styles.cancelIcon}/>
+                </View>
+
+                <View name='right' style={styles.right}>
+                    <Text name='rightMenu'
+                          style={styles.rightText}>
+                        取消
+                    </Text>
+                </View>
             </View>
-            <Image name='cancelIcon'
-                   source={`${IMG_ENDPOINT}cancel@2x.png`}
-                   style={styles.cancelIcon}/>
-        </View>
-
-        <View name='right' style={styles.right}>
-            <Text name='rightMenu'
-                  style={styles.rightText}>
-                取消
-            </Text>
-        </View>
-    </View>
-
+        )
+    }
+}
 
 const styles = StyleSheet.create({
     row: {

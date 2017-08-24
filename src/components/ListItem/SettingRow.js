@@ -13,18 +13,22 @@ import {Image, StyleSheet, Text, View} from 'react-primitives';
 import Color from "../../common/color";
 
 
-const SettingRow = props =>
-    <View name='Settingrow'
-          style={styles.row}>
-        <Image name='icon'
-               source={props.icon}
-               style={styles.icon}/>
-        <Text name='title'
-              style={styles.text}>
-            {props.subtitle}
-        </Text>
-    </View>
+class SettingRow extends React.Component {
+    render() {
+        return (
+            <View name='Settingrow'
+                  style={styles.row}>
+                <Image name='icon'
+                       source={this.props.icon}
+                       style={styles.icon}/>
+                <Text name='title'
+                      style={styles.text}>
+                    {this.props.subtitle}
+                </Text>
+            </View>)
+    }
 
+}
 
 const styles = StyleSheet.create({
     row: {

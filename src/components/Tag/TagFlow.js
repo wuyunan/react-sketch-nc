@@ -3,31 +3,34 @@
  * Define your component using platform-independent primitives
  */
 import React from 'react';
-
 // import {
 //     Image,
 //     View,
 //     Text,
 //     StyleSheet
 // } from 'react-sketchapp';
-import {Image, View, Text, StyleSheet} from 'react-primitives';
+import {StyleSheet, View} from 'react-primitives';
 
 
 import Color from "../../common/color";
 import Tag from "./Tag";
 
-const TagFlow = ({tags}) =>
-    <View name='tag'
-          style={styles.tagFlow}>
+class TagFlow extends React.Component {
+    render() {
+        return (
+            <View name='tag'
+                  style={styles.tagFlow}>
 
-        {tags.map(tag => (
-            <Tag text={tag.text}
-                 selected={tag.selected}
+                {this.props.tags.map(tag => (
+                    <Tag text={tag.text}
+                         selected={tag.selected}
 
-            />
-        ))}
+                    />
+                ))}
 
-    </View>;
+            </View>)
+    }
+}
 
 
 const styles = StyleSheet.create({
@@ -41,8 +44,8 @@ const styles = StyleSheet.create({
         shadowColor: '#DDDDDD',
         shadowOffsetY: -1,
         shadowBlur: 4,
-        flexWrap:'wrap',
-        padding:10,
+        flexWrap: 'wrap',
+        padding: 10,
     },
     tag: {
         flex: 1,

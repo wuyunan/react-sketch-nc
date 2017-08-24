@@ -3,26 +3,29 @@
  * Define your component using platform-independent primitives
  */
 import React from 'react';
-
 // import {
 //     Image,
 //     View,
 //     Text,
 //     StyleSheet
 // } from 'react-sketchapp';
-import {Image, View, Text, StyleSheet} from 'react-primitives';
+import {StyleSheet, Text} from 'react-primitives';
 
 
 import Color from "../../common/color";
 
 
-const Tag = props =>
+class Tag extends React.Component {
+    render() {
+        return (
 
-    <Text name={props.text}
-          style={props.selected ? styles.textSelected : styles.text}>
-        {props.text}
-    </Text>
-
+            <Text name={this.props.text}
+                  style={this.props.selected ? styles.textSelected : styles.text}>
+                {this.props.text}
+            </Text>
+        )
+    }
+}
 
 const styles = StyleSheet.create({
 

@@ -13,35 +13,39 @@ import {Image, StyleSheet, Text, View} from 'react-primitives';
 import Color from "../../common/color";
 
 
-const TwoRow = props =>
-    <View name='TwoRow'
-          style={styles.row}>
-        <Image name='icon'
-               source={props.icon}
-               style={styles.icon}/>
-        <View style={styles.right}>
-            <Text name='title'
-                  style={styles.title}>
-                {props.title}
-            </Text>
-            <Text name='subtitle'
-                  style={styles.subTitle}>
-                {props.subtitle}
-            </Text>
-        </View>
-    </View>
-
+class TwoRow extends React.Component {
+    render() {
+        return (
+            <View name='TwoRow'
+                  style={styles.row}>
+                <Image name='icon'
+                       source={this.props.icon}
+                       style={styles.icon}/>
+                <View style={styles.right}>
+                    <Text name='title'
+                          style={styles.title}>
+                        {this.props.title}
+                    </Text>
+                    <Text name='subtitle'
+                          style={styles.subTitle}>
+                        {this.props.subtitle}
+                    </Text>
+                </View>
+            </View>
+        )
+    }
+}
 
 const styles = StyleSheet.create({
     row: {
-        backgroundColor: '#F9FDFF',
+        backgroundColor: Color.white,
         width: 375,
         height: 60,
         flexDirection: 'row',
         flex: 1,
         paddingLeft: 12,
         paddingRight: 12,
-        borderBottomColor: '#ebebeb',
+        borderBottomColor: Color.divider_secondary,
         borderWidth: 0.5,
     },
     icon: {

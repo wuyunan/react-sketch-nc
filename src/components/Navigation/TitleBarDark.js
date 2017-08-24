@@ -3,39 +3,42 @@
  * Define your component using platform-independent primitives
  */
 import React from 'react';
-
 // import {
 //     Image,
 //     View,
 //     Text,
 //     StyleSheet
 // } from 'react-sketchapp';
-import { Image, View, Text, StyleSheet } from 'react-primitives';
+import {Image, StyleSheet, Text, View} from 'react-primitives';
 
 
 import Color from "../../common/color";
 
 
-const TitleBarDark = props =>
-    <View name='Title'
-          style={styles.row}>
+class TitleBarDark extends React.Component {
+    render() {
+        return (
+            <View name='Title'
+                  style={styles.row}>
 
-        <View name='left' style={styles.left}>
-            <Image name='backButton'
-                   source={props.backIcon}
-                   style={styles.back}/>
-            <Text name='leftText'
-                  style={styles.leftText}>{props.leftText}</Text></View>
+                <View name='left' style={styles.left}>
+                    <Image name='backButton'
+                           source={this.props.backIcon}
+                           style={styles.back}/>
+                    <Text name='leftText'
+                          style={styles.leftText}>{this.props.leftText}</Text></View>
 
-        <Text name='title'
-              style={styles.title}>{props.title}</Text>
+                <Text name='title'
+                      style={styles.title}>{this.props.title}</Text>
 
-        <View name='right' style={styles.right}>
-            <Text name='rightMenu'
-                  style={styles.rightText}>{props.rightText}</Text>
-        </View>
-    </View>
-
+                <View name='right' style={styles.right}>
+                    <Text name='rightMenu'
+                          style={styles.rightText}>{this.props.rightText}</Text>
+                </View>
+            </View>
+        )
+    }
+}
 
 const styles = StyleSheet.create({
     row: {

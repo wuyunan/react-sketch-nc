@@ -3,14 +3,13 @@
  * Define your component using platform-independent primitives
  */
 import React from 'react';
-
 // import {
 //     Image,
 //     View,
 //     Text,
 //     StyleSheet
 // } from 'react-sketchapp';
-import { Image, View, Text, StyleSheet } from 'react-primitives';
+import {Image, StyleSheet, Text, View} from 'react-primitives';
 
 
 import Config from '../../config/index'
@@ -19,41 +18,45 @@ import Color from "../../common/color";
 
 const IMG_ENDPOINT = `${Config.IMAGE_SERVER_URL}:${Config.IMAGE_SERVER_PORT}/`;
 
-const StatusBarLight = props =>
-    <View name='StatusBarWhite'
-          style={styles.row}>
-        <View name='left' style={styles.left}>
-            <View name='sign' style={styles.sign}>
-                <View style={styles.dot}/>
-                <View style={styles.dot}/>
-                <View style={styles.dot}/>
-                <View style={styles.dot_empty}/>
-                <View style={styles.dot_empty}/>
-            </View>
-            <Text name='brand' style={styles.brand}>
-                NCTech
-            </Text>
-            <Image
-                name='wifi'
-                style={styles.wifi}
-                source={`${IMG_ENDPOINT}Wifi-Black.png`}
-            />
-        </View>
-        <Text name='time' style={styles.time}>
-            9:58 AM
-        </Text>
-        <View name='batteryArea' style={styles.batteryArea}>
+class StatusBarLight extends React.Component {
+    render() {
+        return (
+            <View name='StatusBarWhite'
+                  style={styles.row}>
+                <View name='left' style={styles.left}>
+                    <View name='sign' style={styles.sign}>
+                        <View style={styles.dot}/>
+                        <View style={styles.dot}/>
+                        <View style={styles.dot}/>
+                        <View style={styles.dot_empty}/>
+                        <View style={styles.dot_empty}/>
+                    </View>
+                    <Text name='brand' style={styles.brand}>
+                        NCTech
+                    </Text>
+                    <Image
+                        name='wifi'
+                        style={styles.wifi}
+                        source={`${IMG_ENDPOINT}Wifi-Black.png`}
+                    />
+                </View>
+                <Text name='time' style={styles.time}>
+                    9:58 AM
+                </Text>
+                <View name='batteryArea' style={styles.batteryArea}>
 
-            <Image
-                name='battery'
-                style={styles.battery}
-                source={`${IMG_ENDPOINT}Battery_Black@2x.png`}
-            />
-            <Text name='brand' style={styles.brand}>
-            77%
-        </Text>
-        </View>
-    </View>
+                    <Image
+                        name='battery'
+                        style={styles.battery}
+                        source={`${IMG_ENDPOINT}Battery_Black@2x.png`}
+                    />
+                    <Text name='brand' style={styles.brand}>
+                        77%
+                    </Text>
+                </View>
+            </View>)
+    }
+}
 
 
 const styles = StyleSheet.create({

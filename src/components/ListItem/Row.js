@@ -11,10 +11,15 @@ import React from 'react';
 // } from 'react-sketchapp';
 import {Text, View} from 'react-primitives';
 
-const Row = props =>
-    <View>
-        <Text>{props.title}</Text>
-        <Text>{props.subtitle}</Text>
-    </View>
+class Row extends React.Component {
+    render() {
+        return (
+            <View>
+                <Text>{this.props.title}</Text>
+                <Text>{this.props.subtitle}</Text>
+            </View>
+        );
+    }
+}
 
 export default Row;

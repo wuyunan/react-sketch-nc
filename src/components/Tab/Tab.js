@@ -15,21 +15,25 @@ import {StyleSheet, View} from 'react-primitives';
 import Color from "../../common/color";
 import TabItem from "./TabItem";
 
-const Tab = ({tabs}) =>
-    <View name='Tab'
-          style={styles.row}>
+class Tab extends React.Component {
+    render() {
+        return (
+            <View name='Tab'
+                  style={styles.row}>
 
-        {tabs.map(tab => (
-            <TabItem text={tab.text}
-                     style={styles.tabItem}
-                     selected={tab.selected}
-                     icon={tab.icon}
-                     underline={tab.underline}
-            />
-        ))}
+                {this.props.tabs.map(tab => (
+                    <TabItem text={tab.text}
+                             style={styles.tabItem}
+                             selected={tab.selected}
+                             icon={tab.icon}
+                             underline={tab.underline}
+                    />
+                ))}
 
-    </View>;
-
+            </View>
+        )
+    }
+}
 
 const styles = StyleSheet.create({
     row: {

@@ -199,7 +199,6 @@ const Demo5 = props => (
             <SettingList/>
 
             <Tabbar tabbars={DATA}/>
-
         </Artboard>
     )
 ;

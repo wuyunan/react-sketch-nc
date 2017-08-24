@@ -15,14 +15,18 @@ import {StyleSheet, Text, View} from 'react-primitives';
 import Color from "../../common/color";
 
 
-const TabItem = props =>
-    <View name='TabItem'
-          style={props.selected && props.underline ? styles.rowSelected : styles.row}>
-        <Text name='text' style={props.selected ? styles.textSelected : styles.text}>
-            {props.text}
-        </Text>
+class TabItem extends React.Component {
+    render() {
+        return (
+            <View name='TabItem'
+                  style={this.props.selected && this.props.underline ? styles.rowSelected : styles.row}>
+                <Text name='text' style={this.props.selected ? styles.textSelected : styles.text}>
+                    {this.props.text}
+                </Text>
 
-    </View>
+            </View>)
+    }
+}
 
 
 const styles = StyleSheet.create({

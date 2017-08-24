@@ -15,13 +15,13 @@ import {StyleSheet, View} from 'react-primitives';
 import Color from "../../common/color";
 import TabbarItem from "./TabbarItem";
 
-class Tabbar extends React.Component {
+class Swipe extends React.Component {
     render() {
         return (
             <View name='TabbarItem'
                   style={styles.row}>
 
-                {this.props.tabbars.map(tabbar => (
+                {this.props.items.map(tabbar => (
                     <TabbarItem text={tabbar.text}
                                 style={styles.tabbarItem}
                                 selected={tabbar.selected}
@@ -55,4 +55,4 @@ const styles = StyleSheet.create({
     },
 
 });
-export default Tabbar;
+export default Swipe;
