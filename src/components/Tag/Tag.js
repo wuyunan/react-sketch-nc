@@ -12,8 +12,7 @@ import React from 'react';
 import {StyleSheet, Text} from 'react-primitives';
 
 
-import Color from "../../common/color";
-
+import {Color} from "../../common/index";
 
 class Tag extends React.Component {
     render() {

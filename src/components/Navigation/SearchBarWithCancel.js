@@ -11,7 +11,7 @@ import React from 'react';
 // } from 'react-sketchapp';
 import {Image, StyleSheet, Text, View} from 'react-primitives';
 
-import Color from "../../common/color";
+import {Color, Dimensions} from "../../common/index";
 import Config from "../../config/index";
 
 const IMG_ENDPOINT = `${Config.IMAGE_SERVER_URL}:${Config.IMAGE_SERVER_PORT}/`;
@@ -52,7 +52,7 @@ class SearchBarWithCancel extends React.Component {
 const styles = StyleSheet.create({
     row: {
         backgroundColor: Color.background_native,
-        width: 375,
+        width: Dimensions.ScreenWidth,
         height: 44,
         flexDirection: 'row',
         flex: 1,

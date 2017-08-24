@@ -12,18 +12,26 @@ import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-primitives';
 import {Color, Dimensions} from "../../common/index";
 
-class SettingRow extends React.Component {
+class ThreeImageRow extends React.Component {
     render() {
         return (
             <View name='Settingrow'
                   style={styles.row}>
-                <Image name='icon'
-                       source={this.props.icon}
-                       style={styles.icon}/>
                 <Text name='title'
-                      style={styles.text}>
-                    {this.props.subtitle}
+                      style={styles.title}>
+                    {this.props.title}
                 </Text>
+                <View style={styles.item}>
+
+
+                    {this.props.images.slice(0, 3).map(item => (
+
+                        <Image name='icon'
+                               source={item.icon}
+                               style={styles.icon}/>
+
+                    ))}
+                </View>
             </View>)
     }
 
@@ -33,32 +41,33 @@ const styles = StyleSheet.create({
     row: {
         backgroundColor: '#F9FDFF',
         width: Dimensions.ScreenWidth,
-        height: 44,
-        flexDirection: 'row',
+        flexDirection: 'column',
         flex: 1,
         paddingLeft: 12,
         paddingRight: 12,
         borderBottomColor: '#ebebeb',
         borderWidth: 0.5,
     },
+    item: {
+        width: Dimensions.ScreenWidth - 24,
+        flexDirection: 'row',
+        flex: 1,
+
+    },
     icon: {
         marginTop: 10,
-        height: 24,
-        width: 24,
-        alignItems: 'center',
+        height: (Dimensions.ScreenWidth - 24) / 3,
+        width: (Dimensions.ScreenWidth - 24) / 3,
         resizeMode: 'contain',
     },
-    text: {
-        marginTop: 2,
-        marginLeft: 12,
-        alignContent: 'center',
-        alignSelf: 'center',
-        justifyContent: 'center',
-        height: 44,
+    title: {
+        marginTop: 12,
+        alignContent: 'flex-start',
         fontSize: 15,
         color: Color.text_black,
+        line: 2,
         fontFamily: "PingFang SC",
     }
 
 });
-export default SettingRow;
+export default ThreeImageRow;

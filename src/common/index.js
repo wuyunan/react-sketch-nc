@@ -1,8 +1,9 @@
-import Color from './color'
+import Color1 from './color'
+import Dimensions1 from './dimensions'
 
-export default {
+module.exports = {
 
-    Color: Color,
+    Color: Color1,
 
-
+    Dimensions: Dimensions1,
 }

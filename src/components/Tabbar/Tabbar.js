@@ -12,7 +12,7 @@ import React from 'react';
 import {StyleSheet, View} from 'react-primitives';
 
 
-import Color from "../../common/color";
+import {Color, Dimensions} from "../../common/index";
 import TabbarItem from "./TabbarItem";
 
 class Tabbar extends React.Component {
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         height: 50,
-        width: 375,
+        width: Dimensions.ScreenWidth,
         paddingLeft: 30,
         paddingRight: 30,
         shadowColor: '#DDDDDD',

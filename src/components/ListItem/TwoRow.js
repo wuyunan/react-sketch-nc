@@ -10,8 +10,7 @@ import React from 'react';
 //     StyleSheet
 // } from 'react-sketchapp';
 import {Image, StyleSheet, Text, View} from 'react-primitives';
-import Color from "../../common/color";
-
+import {Color, Dimensions} from "../../common/index";
 
 class TwoRow extends React.Component {
     render() {
@@ -39,7 +38,7 @@ class TwoRow extends React.Component {
 const styles = StyleSheet.create({
     row: {
         backgroundColor: Color.white,
-        width: 375,
+        width: Dimensions.ScreenWidth,
         height: 60,
         flexDirection: 'row',
         flex: 1,

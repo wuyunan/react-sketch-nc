@@ -12,7 +12,7 @@ import React from 'react';
 import {StyleSheet, View} from 'react-primitives';
 
 
-import Color from "../../common/color";
+import {Color, Dimensions} from "../../common/index";
 import TabItem from "./TabItem";
 
 class Tab extends React.Component {
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
         height: 42,
-        width: 375,
+        width: Dimensions.ScreenWidth,
         shadowColor: '#DDDDDD',
         shadowOffsetY: -1,
         shadowBlur: 4,

@@ -12,8 +12,7 @@ import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-primitives';
 
 
-import Color from "../../common/color";
-
+import {Color} from "../../common/index";
 
 class TabbarItem extends React.Component {
     render() {

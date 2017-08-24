@@ -12,47 +12,87 @@ import React from 'react';
 import {StyleSheet, View} from 'react-primitives';
 
 
-import Color from "../../common/color";
-import TabbarItem from "./TabbarItem";
+import {Color, Dimensions} from "../../common/index";
+import TabbarItem from "../Tabbar/TabbarItem";
 
 class Swipe extends React.Component {
     render() {
         return (
-            <View name='TabbarItem'
+            <View name='Swipe'
                   style={styles.row}>
+                <View name='item'
+                      style={styles.row}>
+                    {this.props.items.slice(0, 10).map(item => (
 
-                {this.props.items.map(tabbar => (
-                    <TabbarItem text={tabbar.text}
-                                style={styles.tabbarItem}
-                                selected={tabbar.selected}
-                                icon={tabbar.icon}
-                    />
-                ))}
-
+                        <View style={styles.item}>
+                            <TabbarItem text={item.text}
+                                        selected={item.selected}
+                                        icon={item.icon}
+                            /></View>
+                    ))}
+                </View>
+                <View name='in' style={styles.row2}>
+                    <View style={styles.dot}/>
+                    <View style={styles.dot}/>
+                    <View style={styles.dot_empty}/>
+                    <View style={styles.dot}/>
+                    <View style={styles.dot}/>
+                </View>
             </View>)
     }
 }
 
 
 const styles = StyleSheet.create({
-    row: {
-        backgroundColor: Color.white,
-        flexDirection: 'row',
-        alignContent: 'center',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        height: 50,
-        width: 375,
-        paddingLeft: 30,
-        paddingRight: 30,
-        shadowColor: '#DDDDDD',
-        shadowOffsetY: -1,
-        shadowBlur: 4,
+        row: {
+            backgroundColor: Color.white,
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            alignContent: 'center',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: Dimensions.ScreenWidth,
+            paddingLeft: 12,
+            paddingRight: 12,
+        },
+        row2: {
+            backgroundColor: Color.white,
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            alignContent: 'center',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: Dimensions.ScreenWidth,
+            height: 16,
+            marginTop: 2,
 
-    },
-    tabbarItem: {
-        flex: 1,
-    },
+        },
+        item: {
+            width: ( Dimensions.ScreenWidth - 60 - 5 * 4) / 5,
+            marginTop: 10,
+            marginRight: 5,
+            marginLeft: 5,
 
-});
+        },
+        dot: {
+            marginLeft: 3,
+            alignContent: 'center',
+            height: 5.5,
+            width: 5.5,
+            backgroundColor: Color.text_black,
+            borderRadius: 4,
+        },
+        dot_empty: {
+            marginLeft: 2,
+            alignContent: 'center',
+            height: 5.5,
+            width: 5.5,
+            backgroundColor: Color.white,
+            borderColor: Color.text_black,
+            borderWidth: 0.5,
+            borderRadius: 4,
+        },
+
+    })
+;
 export default Swipe;

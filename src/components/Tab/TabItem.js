@@ -12,8 +12,7 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-primitives';
 
 
-import Color from "../../common/color";
-
+import {Color} from "../../common/index";
 
 class TabItem extends React.Component {
     render() {

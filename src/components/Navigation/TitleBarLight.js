@@ -11,8 +11,7 @@ import React from 'react';
 // } from 'react-sketchapp';
 import {Image, StyleSheet, Text, View} from 'react-primitives';
 
-import Color from "../../common/color";
-
+import {Color, Dimensions} from "../../common/index";
 
 class TitleBarLight extends React.Component {
     render() {
@@ -42,7 +41,7 @@ class TitleBarLight extends React.Component {
 const styles = StyleSheet.create({
     row: {
         backgroundColor: Color.white,
-        width: 375,
+        width: Dimensions.ScreenWidth,
         height: 44,
         flexDirection: 'row',
         flex: 1,

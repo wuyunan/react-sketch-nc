@@ -13,8 +13,7 @@ import {Image, StyleSheet, Text, View} from 'react-primitives';
 
 
 import Config from '../../config/index'
-import Color from "../../common/color";
-
+import {Color, Dimensions} from "../../common/index";
 
 const IMG_ENDPOINT = `${Config.IMAGE_SERVER_URL}:${Config.IMAGE_SERVER_PORT}/`;
 
@@ -62,7 +61,7 @@ class StatusBarLight extends React.Component {
 const styles = StyleSheet.create({
     row: {
         backgroundColor: Color.white,
-        width: 375,
+        width: Dimensions.ScreenWidth,
         height: 20,
         flexDirection: 'row',
         alignContent: 'center',
