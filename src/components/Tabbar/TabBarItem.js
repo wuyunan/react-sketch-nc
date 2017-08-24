@@ -14,7 +14,7 @@ import {Image, StyleSheet, Text, View} from 'react-primitives';
 
 import {Color} from "../../common/index";
 
-class TabbarItem extends React.Component {
+class TabBarItem extends React.Component {
     render() {
         return (
             <View name='TabbarItem'
@@ -61,4 +61,4 @@ const styles = StyleSheet.create({
         fontSize: 10,
     }
 });
-export default TabbarItem;
+export default TabBarItem;

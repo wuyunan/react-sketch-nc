@@ -7,7 +7,7 @@
 
 
 export default {
-    colorPrimary:'#1b82d2',
+    colorPrimary: '#1b82d2',
     theme: '#06C1AE',
     border: '#e0e0e0',
     background: '#f3f3f3',

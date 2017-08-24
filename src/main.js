@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {render, Artboard, Text, View, StyleSheet} from 'react-sketchapp';
+import {Artboard, render, StyleSheet, Text, View} from 'react-sketchapp';
 
 // const API_ENDPOINT_URL =
 //     'https://api.airtable.com/v0/appFs7J3WdgHYCDxD/Features?api_key=keyu4dudakWLI0vAh&&sort%5B0%5D%5Bfield%5D=Target+Launch+Date&sort%5B0%5D%5Bdirection%5D=asc';
-const API_ENDPOINT_URL ='http://10.12.30.28:8000/Features.json';
+const API_ENDPOINT_URL = 'http://10.12.30.28:8000/Features.json';
 
 const styles = StyleSheet.create({
     artboard: {

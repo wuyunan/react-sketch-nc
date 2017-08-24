@@ -13,7 +13,7 @@ import {StyleSheet, View} from 'react-primitives';
 
 
 import {Color, Dimensions} from "../../common/index";
-import TabbarItem from "./TabbarItem";
+import TabbarItem from "./TabBarItem";
 
 class Tabbar extends React.Component {
     render() {
@@ -21,11 +21,12 @@ class Tabbar extends React.Component {
             <View name='TabbarItem'
                   style={styles.row}>
 
-                {this.props.tabbars.map(tabbar => (
-                    <TabbarItem text={tabbar.text}
+                {this.props.tabbars.map((item, index) => (
+                    <TabbarItem text={item.text}
                                 style={styles.tabbarItem}
-                                selected={tabbar.selected}
-                                icon={tabbar.icon}
+                                selected={item.selected}
+                                icon={item.icon}
+                                key={index}
                     />
                 ))}
 

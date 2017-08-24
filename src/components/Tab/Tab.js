@@ -21,12 +21,13 @@ class Tab extends React.Component {
             <View name='Tab'
                   style={styles.row}>
 
-                {this.props.tabs.map(tab => (
+                {this.props.tabs.map((tab, index) => (
                     <TabItem text={tab.text}
                              style={styles.tabItem}
                              selected={tab.selected}
                              icon={tab.icon}
                              underline={tab.underline}
+                             key={index}
                     />
                 ))}
 

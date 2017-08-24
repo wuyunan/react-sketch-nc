@@ -15,7 +15,7 @@ import {Color, Dimensions} from "../../common/index";
 class ThreeImageRow extends React.Component {
     render() {
         return (
-            <View name='Settingrow'
+            <View name='ThreeImageRow'
                   style={styles.row}>
                 <Text name='title'
                       style={styles.title}>
@@ -24,9 +24,10 @@ class ThreeImageRow extends React.Component {
                 <View style={styles.item}>
 
 
-                    {this.props.images.slice(0, 3).map(item => (
+                    {this.props.images.slice(0, 3).map((item, index) => (
 
                         <Image name='icon'
+                               key={index}
                                source={item.icon}
                                style={styles.image}/>
 

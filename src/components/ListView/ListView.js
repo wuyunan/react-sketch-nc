@@ -1,16 +1,73 @@
 import React from 'react';
-// import {
-//     Image,
-//     View,
-//     Text,
-//     StyleSheet
-// } from 'react-sketchapp';
-import {Text} from 'react-primitives';
+import {StyleSheet, View} from 'react-primitives';
 
-class Welcome extends React.Component {
+
+import {Color, Dimensions} from "../../common/index";
+
+/**
+ * ListView
+ */
+class ListView extends React.Component {
+    /**
+     * 渲染ItemView
+     * @param item
+     * @param index
+     * @param array
+     * @private
+     */
+    _renderItem(item, index, array) {
+        let itemView =
+            <View
+                name="item"
+                key={index}
+                style={styles.row}>
+                {this.props.renderItem(item)}
+            </View>;
+
+        if (index !== array.length - 1
+            && this.props.renderSpace !== undefined) {
+
+            itemView =
+                <View
+                    name="item"
+                    key={index}
+                    style={styles.row}>
+                    {this.props.renderItem(item)}
+                    {this.props.renderSpace()}
+                </View>
+            //
+        }
+        return itemView
+    }
+
+    /**
+     *
+     * @returns {XML}
+     */
     render() {
-        return <Text>Hello, {this.props.name}</Text>;
+        return (
+            <View name='ListView'
+                  style={styles.row}>
+                {
+                    this.props.items.map((item, index, array) =>
+                        this._renderItem(item, index, array)
+                    )
+
+                }
+
+            </View>)
     }
 }
 
-export default Welcome;
+const styles = StyleSheet.create({
+        row: {
+            backgroundColor: Color.white,
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            alignContent: 'center',
+            alignItems: 'center',
+            width: Dimensions.ScreenWidth,
+        },
+    })
+;
+export default ListView;

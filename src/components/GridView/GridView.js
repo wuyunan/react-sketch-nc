@@ -13,21 +13,23 @@ import {StyleSheet, View} from 'react-primitives';
 
 
 import {Color, Dimensions} from "../../common/index";
-import TabbarItem from "../Tabbar/TabbarItem";
 
 class GridView extends React.Component {
     render() {
         return (
-            <View name='TabbarItem'
+            <View name='GridView'
                   style={styles.row}>
 
-                {this.props.items.map(item => (
+                {this.props.items.map((item, index) => (
 
-                    <View style={styles.item}>
-                        <TabbarItem text={item.text}
-                                    selected={item.selected}
-                                    icon={item.icon}
-                        /></View>
+                    <View style={styles.item}
+                          key={index}>
+
+                        {
+                            this.props.renderItem(item)
+                        }
+
+                    </View>
                 ))}
 
             </View>)
@@ -42,16 +44,21 @@ const styles = StyleSheet.create({
             flexWrap: 'wrap',
             alignContent: 'center',
             alignItems: 'center',
-            justifyContent: 'center',
             width: Dimensions.ScreenWidth,
-            padding: 12,
+            paddingLeft: 7,
+            paddingRight: 7,
+            paddingTop: 2,
+            paddingBottom: 12,
             shadowColor: '#DDDDDD',
             shadowOffsetY: -1,
             shadowBlur: 4,
         },
         item: {
-            width: ( Dimensions.ScreenWidth - 60 - 5 * 3) / 4,
-            margin: 5,
+            width: ( Dimensions.ScreenWidth - 24 - 10 * 4) / 4,
+            marginTop: 10,
+            marginLeft: 5,
+            marginRight: 5,
+
         }
         ,
 

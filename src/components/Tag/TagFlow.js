@@ -18,12 +18,13 @@ import Tag from "./Tag";
 class TagFlow extends React.Component {
     render() {
         return (
-            <View name='tag'
+            <View name='TagFlow'
                   style={styles.tagFlow}>
 
-                {this.props.tags.map(tag => (
-                    <Tag text={tag.text}
-                         selected={tag.selected}
+                {this.props.tags.map((item, index) => (
+                    <Tag text={item.text}
+                         key={index}
+                         selected={item.selected}
 
                     />
                 ))}

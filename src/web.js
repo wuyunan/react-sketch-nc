@@ -13,8 +13,6 @@ import Tabbar from "./components/Tabbar/Tabbar";
 const IMG_ENDPOINT = `${Config.IMAGE_SERVER_URL}:${Config.IMAGE_SERVER_PORT}/`;
 
 
-
-
 const DATA = [
     {
         text: '支付宝',
@@ -42,17 +40,16 @@ const DATA = [
 ];
 
 
-
 export default () => (
 
     <div>
-        <h1 style={{ fontFamily: "'SF UI Display', 'San Francisco'" }}>Cross-platform components!</h1>
-        <p style={{ fontFamily: "'SF UI Text', 'San Francisco'", maxWidth: '28em', lineHeight: 1.5 }}>
+        <h1 style={{fontFamily: "'SF UI Display', 'San Francisco'"}}>Cross-platform components!</h1>
+        <p style={{fontFamily: "'SF UI Text', 'San Francisco'", maxWidth: '28em', lineHeight: 1.5}}>
             &lt;Profile /&gt; is defined with platform-independent components
             from react-primitives. We can use it in our web UI, and
             continue to use primitives, or mix them with DOM elements
         </p>
-        <div style={{ display: 'flex', flexDirection: 'column',height:667,width:375 }}>
+        <div style={{display: 'flex', flexDirection: 'column', height: 667, width: 375}}>
             <StatusBarDark/>
             <TitleBarDark backIcon={`${IMG_ENDPOINT}back@2x.png`}
                           title="标题"
