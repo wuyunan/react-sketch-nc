@@ -3,7 +3,7 @@
 ###  ListView
 
 
-```
+``` javascript
  const TwoData = [
     {
         icon: `${IMG_ENDPOINT}image1.jpg`,
@@ -22,7 +22,7 @@
 
 ```
 
-```
+``` jspx
    <ListView
             items={TwoData}
             renderItem={(item) =>
