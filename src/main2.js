@@ -36,38 +36,64 @@ const styles = StyleSheet.create({
 
 
 const Demo5 = props => (
-    <Artboard name='自动生成'>
+        <Artboard name='自动生成'>
             <StatusBarDark/>
             <TitleBarDark backIcon={`${IMG_ENDPOINT}back@2x.png`}
                           title="标题"
                           rightText="编辑"
                           leftText="上一个"/>
+            <SearchBar/>
+            <Tab tabs={DATA}/>
+            <Space/>
+
+            <TagFlow tags={Tags}/>
+            <Space/>
+
+            <GridView items={Tags} renderItem={(item) =>
+                <TabBarItem text={item.text}
+                            icon={item.icon}
+                />
+            }/>
+            <Space/>
+
+            <ListView
+                items={TwoData}
+                renderItem={(item) =>
+                    <TwoRow icon={item.icon}
+                            title={item.title}
+                            subtitle={item.subtitle}/>}
+
+            />
+
+            <Space/>
+
+
+            <ListView
+                items={SettingData}
+                renderItem={(item) =>
+                    <SettingRow icon={item.icon}
+                                subtitle={item.text}/>}
+
+            />
+            <Tabbar tabbars={DATA}/>
+        </Artboard>
+    )
+;
+const Demo6 = props => (
+    <Artboard name='自动生成2'>
+        <StatusBarDark/>
+        <TitleBarDark backIcon={`${IMG_ENDPOINT}back@2x.png`}
+                      title="标题"
+                      rightText="编辑"
+                      leftText="上一个"/>
         <SearchBar/>
         <Tab tabs={DATA}/>
         <Space/>
 
-            <TagFlow tags={Tags}/>
-        <Space/>
 
         <Swipe items={Tags}/>
         <Space/>
-        <GridView items={Tags} renderItem={(item) =>
-            <TabBarItem text={item.text}
-                        icon={item.icon}
-            />
-        }/>
-        <Space/>
 
-        <ListView
-            items={TwoData}
-            renderItem={(item) =>
-                <TwoRow icon={item.icon}
-                        title={item.title}
-                        subtitle={item.subtitle}/>}
-
-        />
-
-        <Space/>
 
         <ListView
             items={TwoData}
@@ -87,13 +113,7 @@ const Demo5 = props => (
 
         <Space/>
 
-        <ListView
-            items={SettingData}
-            renderItem={(item) =>
-                <SettingRow icon={item.icon}
-                            subtitle={item.text}/>}
 
-        />
             <Tabbar tabbars={DATA}/>
         </Artboard>
     )
@@ -104,7 +124,9 @@ export default (context) => {
 
 
     let xml = <Demo5/>;
-    render(xml, context.document.currentPage());
+    render(xml, context.document.addBlankPage());
+    let xml2 = <Demo6/>;
+    render(xml2, context.document.addBlankPage());
 
 }
 
