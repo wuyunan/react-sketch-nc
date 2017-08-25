@@ -22,6 +22,8 @@ import ListView from "./components/ListView/ListView";
 import TabBarItem from "./components/Tabbar/TabBarItem";
 import {DATA, IMAGES, SettingData, Tags, TwoData} from "./data/index";
 import Carousel from "./components/Swipe/Carousel";
+import MultiMediaRow from "./components/ListItem/VideoRow";
+import TitleImageRow from "./components/ListItem/TitleImageRow";
 
 const IMG_ENDPOINT = `${Config.IMAGE_SERVER_URL}:${Config.IMAGE_SERVER_PORT}/`;
 
@@ -95,6 +97,15 @@ const Demo6 = props => (
         <Swipe items={Tags}/>
         <Space/>
         <Carousel small={true} images={`${IMG_ENDPOINT}image1.jpg`}/>
+        <Space/>
+
+        <MultiMediaRow image={IMAGES[0].icon}
+                       icon={IMAGES[0].icon}
+        />
+        <Space/>
+        <TitleImageRow image={IMAGES[0].icon}
+                       icon={IMAGES[0].icon}
+        />
         <Space/>
 
         <ListView
