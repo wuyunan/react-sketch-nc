@@ -31,7 +31,6 @@ class CircleIndicator extends React.Component {
 
 const styles = StyleSheet.create({
         row: {
-            backgroundColor: Color.white,
             flexDirection: 'row',
             flexWrap: 'wrap',
             alignContent: 'center',
@@ -42,7 +41,6 @@ const styles = StyleSheet.create({
             paddingRight: 12,
         },
         row2: {
-            backgroundColor: Color.white,
             flexDirection: 'row',
             flexWrap: 'wrap',
             alignContent: 'center',

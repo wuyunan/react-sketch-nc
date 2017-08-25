@@ -94,14 +94,13 @@ const Demo6 = props => (
 
         <Swipe items={Tags}/>
         <Space/>
-        <Carousel images={`${IMG_ENDPOINT}image1.jpg`}/>
+        <Carousel small={true} images={`${IMG_ENDPOINT}image1.jpg`}/>
         <Space/>
 
         <ListView
             items={TwoData}
             renderItem={(item) =>
                 <ThreeImageRow
-                    title="区块在挖矿过程中产生，所谓的挖矿就是区块在挖矿过程中产生，所谓的挖矿就是区块在挖矿过程中产生，所谓的挖矿就是"
                     images={IMAGES}
                     from="悟空问答"
                     comment="2"
